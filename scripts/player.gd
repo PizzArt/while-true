@@ -1,7 +1,7 @@
 extends Sprite
 
 
-enum {WALL, BG, SPD2, SPD1, I5, FINISH, RELOAD}
+enum {WALL, BG, SPD2, SPD1, I5, FINISH, RELOAD, MOVING}
 
 var can_move = true
 var current_cell_pos = Vector2()
@@ -49,6 +49,7 @@ func move():
 		movement = direction * 16
 		position += movement
 		
+		get_parent().moving()
 		current_cell = tilemap.get_cellv(current_cell_pos)
 		can_move = false
 		next_step()
@@ -57,7 +58,7 @@ func move():
 func check_cell():
 	match current_cell:
 		WALL:
-			get_parent().reload()
+			get_parent().reload("die()")
 		SPD1:
 			speed = 1
 		SPD2:
@@ -70,6 +71,8 @@ func check_cell():
 			get_parent().get_parent().next_level()
 			can_move = false
 			$StepCooldown.stop()
+		MOVING:
+			get_parent().reload("die()")
 
 
 func next_step():
@@ -82,7 +85,6 @@ func next_step():
 		$AnimationPlayer.play("reload")
 	else:
 		$StepCooldown.start()
-
 
 
 func _on_StepCooldown_timeout():
