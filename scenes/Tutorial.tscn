@@ -14,11 +14,11 @@ margin_bottom = 152.0
 custom_fonts/mono_font = ExtResource( 1 )
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
-bbcode_text = "You have to [color=#ADF6FF] [wave freq=4]break;[/wave] [/color] to exit out of the [color=#FFF5AD][wave freq=4]while(true)[/wave][/color] loop. You have <i> steps.
-[img]sprites/tilemaps/tilemap.png[/img] 
+bbcode_text = "You have to [img]sprites/break.png[/img][color=#ADF6FF] [wave freq=4]break;[/wave] [/color] to exit out of the [color=#FFF5AD][wave freq=4]while(true)[/wave][/color] loop. You have <i> steps.
+
 "
 text = "You have to  break;  to exit out of the while(true) loop. You have <i> steps.
- 
+
 "
 scroll_active = false
 __meta__ = {
