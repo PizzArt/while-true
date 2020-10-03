@@ -67,6 +67,7 @@ func check_cell():
 
 
 func next_step():
+	get_parent().step()
 	$StepCooldown.start()
 	steps -= 1
 	if steps <= 0:
