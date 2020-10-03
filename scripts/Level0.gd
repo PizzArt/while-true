@@ -4,14 +4,15 @@ var steps_reset = 5 # RESET STEPS TO
 onready var debug = $UI/Debug
 var moving_default_position: Array
 
-export var N = 0
+export var UItopTemplate = 0
 
 func _ready():
 	$Player.steps = steps_reset
 	
-	match N:
+	match UItopTemplate:
 		0:
-			pass
+			$UI/Level0.visible = true
+			$UI/Level1.visible = false
 		1:
 			$UI/Level0.visible = false
 			$UI/Level1.visible = true
@@ -69,7 +70,17 @@ func debug():
 
 func moving():
 	for i in $TileMap.get_used_cells_by_id(7):
-		print(i)
-		if $TileMap.get_cell(i.x+1, i.y) == 1:
-			$TileMap.set_cell(i.x + 1, i.y, 7)
-			$TileMap.set_cell(i.x, i.y, 1)
+		if !$TileMap.is_cell_x_flipped(i.x, i.y):
+			if $TileMap.get_cell(i.x+1, i.y) == 1:
+				$TileMap.set_cell(i.x + 1, i.y, 7)
+				$TileMap.set_cell(i.x, i.y, 1)
+			else:
+				$TileMap.set_cell(i.x - 1, i.y, 7, true)
+				$TileMap.set_cell(i.x, i.y, 1)
+		else:
+			if $TileMap.get_cell(i.x - 1, i.y) == 1:
+				$TileMap.set_cell(i.x - 1, i.y, 7, true)
+				$TileMap.set_cell(i.x, i.y, 1)
+			else:
+				$TileMap.set_cell(i.x + 1, i.y, 7, false)
+				$TileMap.set_cell(i.x, i.y, 1)
