@@ -6,7 +6,8 @@ preload("res://scenes/Tutorial2.tscn").instance(),
 preload("res://scenes/levels/LevelMoving.tscn").instance(),
 preload("res://scenes/levels/Level1.tscn").instance(),
 preload("res://scenes/levels/Level2.tscn").instance(),
-preload("res://scenes/Ending.tscn").instance()
+preload("res://scenes/levels/Level3.tscn").instance(),
+preload("res://scenes/Ending.tscn").instance(),
 ]
 var levelID = 0
 var lastLevel
