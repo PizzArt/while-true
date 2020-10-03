@@ -52,6 +52,7 @@ func move():
 		get_parent().moving()
 		current_cell = tilemap.get_cellv(current_cell_pos)
 		can_move = false
+		print("next step")
 		next_step()
 
 

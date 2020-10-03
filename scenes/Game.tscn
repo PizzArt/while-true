@@ -3,9 +3,19 @@
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 
 [node name="Game" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 153.6, 72 )
 current = true
 zoom = Vector2( 0.3, 0.3 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Transition" type="Polygon2D" parent="."]
+z_index = 10
+color = Color( 0, 0, 0, 0 )
+polygon = PoolVector2Array( -50, -56, 359, -58, 366, 204, -31, 204 )
