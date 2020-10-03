@@ -4,5 +4,7 @@
 
 [resource]
 resource_local_to_scene = true
+size = 20
 use_mipmaps = true
+extra_spacing_bottom = 1
 font_data = ExtResource( 1 )
