@@ -1,25 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://misc/font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/Tutorial.gd" type="Script" id=2]
+
+[sub_resource type="Environment" id=1]
+background_energy = 0.0
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 7.0
-margin_top = 5.0
-margin_right = 294.0
-margin_bottom = 152.0
+margin_left = 12.0
+margin_top = -3.0
+margin_right = 299.0
+margin_bottom = 179.0
 custom_fonts/mono_font = ExtResource( 1 )
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "	You have to [img]sprites/tiles/break.png[/img][color=#ADF6FF] [wave freq=4]break;[/wave] [/color] to exit out of the [color=#FFF5AD][wave freq=4]while(true)[/wave][/color] loop. 
+	
 	You have [color=#FFADAD]i[/color] steps.
 	[img]sprites/tiles/i.png[/img] sets [color=#FFADAD]i[/color] to 10.
 
 "
 text = "	You have to  break;  to exit out of the while(true) loop. 
+	
 	You have i steps.
 	 sets i to 10.
 
@@ -32,3 +37,6 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 148.794, 85.8254 )
 zoom = Vector2( 0.3, 0.3 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )

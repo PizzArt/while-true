@@ -73,14 +73,22 @@ func check_cell():
 
 
 func next_step():
-	$StepCooldown.start()
 	steps -= 1
 	check_cell()
 	get_parent().step()
 	if steps <= 0:
-		get_parent().reload()
+		can_move = false
+		$ReloadDelay.start()
+		$AnimationPlayer.play("reload")
+	else:
+		$StepCooldown.start()
 
 
 
 func _on_StepCooldown_timeout():
 	can_move = true
+
+
+func _on_ReloadDelay_timeout():
+	can_move = true
+	get_parent().reload()

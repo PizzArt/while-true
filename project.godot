@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="LD47"
 run/main_scene="res://scenes/Game.tscn"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 
 [display]
 
@@ -64,4 +65,5 @@ accept={
 [rendering]
 
 quality/2d/use_pixel_snap=true
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/dynamic_fonts/use_oversampling=false

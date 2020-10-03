@@ -1,7 +1,7 @@
 extends Node2D
 
 var steps_reset = 5 # RESET STEPS TO
-onready var debug = $Control/Debug
+onready var debug = $UI/Debug
 
 func _ready():
 	$Player.steps = steps_reset
@@ -32,8 +32,8 @@ func step():
 
 
 func show_func(text):
-	get_node("Control/Function/AnimationPlayer").play("fade")
-	get_node("Control/Function").text = text
+	get_node("UI/Function/AnimationPlayer").play("fade")
+	get_node("UI/Function").text = text
 
 
 func set_color(node, color):
@@ -41,6 +41,6 @@ func set_color(node, color):
 
 
 func debug():
-	debug.text = ""
-	debug.text += "Global\n" + "  speed: " + String($Player.speed)
-	debug.text += "\nLocal\n" + "  steps: " + String($Player.steps)
+	debug.text = "  DEBUG"
+	debug.text += "Global variables\n" + "  speed: " + String($Player.speed)
+	debug.text += "\nLocal variables\n" + "  steps: " + String($Player.steps)
