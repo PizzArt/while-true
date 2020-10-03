@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/tilemap.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sprites/textures_tileset.png" type="Texture" id=4]
+[ext_resource path="res://sprites/tilemaps/textures_tileset.png" type="Texture" id=4]
 [ext_resource path="res://scripts/Level0.gd" type="Script" id=5]
 
 [sub_resource type="CanvasItemMaterial" id=1]

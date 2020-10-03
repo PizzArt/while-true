@@ -34,16 +34,15 @@ expand_margin_left = 4.0
 expand_margin_right = 4.0
 
 [sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.486275, 0.666667, 0.917647, 1 )
+bg_color = Color( 0.678431, 0.792157, 1, 1 )
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color( 0.176471, 0.384314, 0.788235, 0.917647 )
+border_color = Color( 0.333333, 0.333333, 0.333333, 1 )
 corner_detail = 6
 expand_margin_left = 6.0
 expand_margin_right = 6.0
-expand_margin_bottom = 2.0
 
 [sub_resource type="DynamicFont" id=6]
 resource_local_to_scene = true
@@ -227,10 +226,11 @@ text = "i = 5; }"
 
 [node name="Function" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 105.689
-margin_top = 19.6455
-margin_right = 174.689
-margin_bottom = 57.6455
+margin_left = 213.0
+margin_top = 16.0
+margin_right = 282.0
+margin_bottom = 54.0
+rect_scale = Vector2( 0.8, 0.8 )
 custom_styles/normal = SubResource( 5 )
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
