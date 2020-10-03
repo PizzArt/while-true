@@ -1,6 +1,0 @@
-[gd_scene format=2]
-
-[node name="Camera2D" type="Camera2D"]
-position = Vector2( 143.173, 64.7019 )
-current = true
-zoom = Vector2( 0.3, 0.3 )

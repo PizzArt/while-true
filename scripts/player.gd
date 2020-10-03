@@ -1,22 +1,25 @@
 extends Sprite
 
 
-enum {WALL, BG, SPD2, SPD1, I5, SMTH, RELOAD}
+enum {WALL, BG, SPD2, SPD1, I5, FINISH, RELOAD}
 
 var can_move = true
 var current_cell_pos = Vector2()
 var current_cell
 var movement = Vector2()
+var default_position
+var default_cell
 
 var steps = 1
 var speed = 1
 
 onready var tilemap = get_parent().get_node("TileMap")
-onready var debug = get_parent().get_node("Control/Debug")
 
 
 func _ready():
-	debug()
+	default_position = position
+	current_cell_pos = Vector2(int(position.x/16), int(position.y/16) )
+	default_cell = current_cell_pos
 
 
 func _process(delta):
@@ -48,7 +51,6 @@ func move():
 		
 		current_cell = tilemap.get_cellv(current_cell_pos)
 		can_move = false
-		check_cell()
 		next_step()
 
 
@@ -64,22 +66,20 @@ func check_cell():
 			steps = 10
 		RELOAD:
 			get_parent().cont()
+		FINISH:
+			get_parent().get_parent().next_level()
+			can_move = false
+			$StepCooldown.stop()
 
 
 func next_step():
-	get_parent().step()
 	$StepCooldown.start()
 	steps -= 1
+	check_cell()
+	get_parent().step()
 	if steps <= 0:
 		get_parent().reload()
-	debug()
 
-
-func debug():
-	print(current_cell_pos , " " , tilemap.get_cell(current_cell_pos.x, current_cell_pos.y));
-	debug.text = ""
-	debug.text += "Global\n" + "  speed: " + String(speed)
-	debug.text += "\nLocal\n" + "  steps: " + String(steps)
 
 
 func _on_StepCooldown_timeout():
