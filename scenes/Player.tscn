@@ -4,7 +4,7 @@
 [ext_resource path="res://sprites/player.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.56665, 6.55771 )
+extents = Vector2( 7.99801, 7.98706 )
 
 [node name="Player" type="Sprite"]
 position = Vector2( 8, 8 )
