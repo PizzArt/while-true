@@ -23,7 +23,3 @@ position = Vector2( 104, 40 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
-margin_left = -0.326984
-margin_top = -17.39
-margin_right = -0.326984
-margin_bottom = -17.3899

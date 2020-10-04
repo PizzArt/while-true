@@ -28,7 +28,3 @@ position = Vector2( 40, 72 )
 environment = SubResource( 2 )
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
-margin_left = -0.326984
-margin_top = -17.39
-margin_right = -0.326984
-margin_bottom = -17.3899

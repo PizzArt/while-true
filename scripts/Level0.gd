@@ -3,6 +3,7 @@ extends Node2D
 var steps_reset = 5 # RESET STEPS TO
 onready var debug = $UI/Debug
 var moving_default_position: Array
+var moving_default_rotation: Array
 
 export var UItopTemplate = 0
 
@@ -19,6 +20,7 @@ func _ready():
 	
 	for i in $TileMap.get_used_cells_by_id(7):
 		moving_default_position.append(i)
+		moving_default_rotation.append( $TileMap.is_cell_x_flipped(i.x, i.y) )
 
 
 func _physics_process(delta):
@@ -37,7 +39,8 @@ func reload(funct = "reset()"):
 	for k in $TileMap.get_used_cells_by_id(7):    # DELETE ALL MOVING
 		$TileMap.set_cell(k.x, k.y, 1)
 	for i in moving_default_position.size():
-		$TileMap.set_cellv(moving_default_position[j], 7)  #RESET ALL MOVING
+		$TileMap.set_cellv(moving_default_position[j], 7, moving_default_rotation[j])  # RESET ALL MOVING
+		
 		j+=1
 
 
@@ -74,16 +77,14 @@ func debug():
 func moving():
 	for i in $TileMap.get_used_cells_by_id(7):
 		if !$TileMap.is_cell_x_flipped(i.x, i.y):
+			$TileMap.set_cell(i.x, i.y, 1)
 			if $TileMap.get_cell(i.x+1, i.y) == 1:
-				$TileMap.set_cell(i.x, i.y, 1)
 				$TileMap.set_cell(i.x + 1, i.y, 7)
 			else:
-				$TileMap.set_cell(i.x, i.y, 1)
 				$TileMap.set_cell(i.x - 1, i.y, 7, true)
 		else:
+			$TileMap.set_cell(i.x, i.y, 1)
 			if $TileMap.get_cell(i.x - 1, i.y) == 1:
-				$TileMap.set_cell(i.x, i.y, 1)
 				$TileMap.set_cell(i.x - 1, i.y, 7, true)
 			else:
-				$TileMap.set_cell(i.x, i.y, 1)
 				$TileMap.set_cell(i.x + 1, i.y, 7, false)
