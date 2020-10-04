@@ -67,3 +67,7 @@ func _on_Music_Slider_value_changed(value):
 func _on_Sound_Slider_value_changed(value):
 	config.set_value("volume", "sound", value)
 	config.save("user://wt_settings.cfg")
+
+
+func _on_Editor_pressed():
+	get_tree().change_scene("res://scenes/Editor.tscn")
