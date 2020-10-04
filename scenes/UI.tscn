@@ -134,7 +134,7 @@ zoom = Vector2( 0.3, 0.3 )
 [node name="Level1" type="HBoxContainer" parent="."]
 margin_left = 1.76777
 margin_top = 0.265165
-margin_right = 410.768
+margin_right = 782.768
 margin_bottom = 30.2652
 rect_scale = Vector2( 0.5, 0.5 )
 custom_constants/separation = 8
@@ -185,7 +185,7 @@ text = "}                         "
 visible = false
 margin_left = 1.76777
 margin_top = 0.265165
-margin_right = 410.768
+margin_right = 447.768
 margin_bottom = 30.2652
 rect_scale = Vector2( 0.5, 0.5 )
 custom_constants/separation = 8
