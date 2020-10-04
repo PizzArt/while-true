@@ -316,7 +316,6 @@ margin_bottom = 39.2
 size_flags_horizontal = 4
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
-button_mask = 2
 text = "Return"
 flat = true
 
@@ -328,7 +327,6 @@ margin_bottom = 82.2
 size_flags_horizontal = 4
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
-button_mask = 2
 text = "Test"
 flat = true
 
@@ -340,7 +338,6 @@ margin_bottom = 125.2
 size_flags_horizontal = 4
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
-button_mask = 2
 text = "Save"
 flat = true
 
@@ -352,7 +349,6 @@ margin_bottom = 168.2
 size_flags_horizontal = 4
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
-button_mask = 2
 text = "Load"
 flat = true
 
@@ -364,7 +360,6 @@ margin_bottom = 211.2
 size_flags_horizontal = 4
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
-button_mask = 2
 text = "Main Menu"
 flat = true
 
@@ -376,7 +371,6 @@ margin_right = 154.8
 margin_bottom = 570.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
-button_mask = 2
 text = "Finish testing"
 flat = true
 

@@ -2,6 +2,7 @@ extends Control
 
 signal save_path_changed
 signal load_path_changed
+var target_zoom = Vector2(0.5,0.5)
 var current_tile = 1
 var start_placed = false
 var start_pos = Vector2()
@@ -22,7 +23,13 @@ onready var buttons = [
 onready var tilemap = $TileMap
 
 
+func _ready():
+	$Camera.zoom = Vector2(0.5, 0.5)
+
+
 func _process(_delta):
+	zoom()
+	
 	if draw:
 		var mouse_pos = get_global_mouse_position()
 		var tile_pos = tilemap.map_to_world(tilemap.world_to_map(mouse_pos)) / 16
@@ -58,6 +65,12 @@ func save_level():
 	ResourceSaver.save(level_save_path, packed_scene)
 
 
+func autosave():
+	var packed_scene = PackedScene.new()
+	packed_scene.pack(tilemap)
+	ResourceSaver.save("user://autosave.tscn", packed_scene)
+
+
 func load_level():
 	tilemap.queue_free()
 	var packed_scene = load(level_load_path)
@@ -67,6 +80,10 @@ func load_level():
 
 
 func test_level():
+	autosave()
+	var spawn = $TileMap.get_used_cells_by_id(8)[0]
+	print("spawn: ", spawn)
+#	$TileMap.position.x -= 16
 	var character = player.instance()
 	var lvl = level.instance()
 	remove_child(tilemap)
@@ -82,14 +99,38 @@ func test_level():
 
 
 func finish_test():
+	var children = get_children()
+	for i in children:
+		if i.name == "Level":
+			i.queue_free()
+	var packed_scene = load("user://autosave.tscn")
+	var map = packed_scene.instance()
+	add_child(map)
+	tilemap = map
 	$"CL/UI/1".show()
 	$CL/UI/Finish.hide()
+	draw = true
 
 
 func _on_CheckButton_toggled(button_pressed):
 	if button_pressed:
 		$"CL/UI/1/2/HideButton".hide()
 		$"CL/UI/1/2/Text".hide()
+
+
+func _input(event):     # ZOOM
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			if event.button_index == BUTTON_WHEEL_UP:
+				target_zoom -= Vector2( 0.1, 0.1)
+			if event.button_index == BUTTON_WHEEL_DOWN:
+				target_zoom += Vector2( 0.1, 0.1 )
+			target_zoom.x = clamp(target_zoom.x, 0.3, 5)
+			target_zoom.y = target_zoom.x
+
+
+func zoom():
+	$Camera.zoom = $Camera.zoom.linear_interpolate(target_zoom, 0.2)
 
 
 func _on_BG_pressed():
@@ -154,7 +195,8 @@ func _on_Quit_confirmed():
 
 
 func _on_Test_pressed():
-	test_level()
+	if $TileMap.get_used_cells_by_id(8).size() == 1:
+		test_level()
 
 
 func _on_Finish_pressed():
