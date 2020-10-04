@@ -3,8 +3,8 @@ extends Control
 var counter = 0
 var config = ConfigFile.new()
 var err = config.load("user://wt_settings.cfg")
-onready var mus_slider = $"MarginContainer/Volume/Music/Music Slider"
-onready var sfx_slider = $"MarginContainer/Volume/Sound/Sound Slider"
+onready var mus_slider = $"MarginContainer/Volume/Volume/Music/Music Slider"
+onready var sfx_slider = $"MarginContainer/Volume/Volume/Sound/Sound Slider"
 
 func _ready():
 	startup()

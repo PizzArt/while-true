@@ -102,7 +102,7 @@
 6/shapes = [  ]
 6/z_index = 0
 
-[node name="Level" type="TileMap"]
+[node name="TileMap" type="TileMap"]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1

@@ -1,19 +1,19 @@
 extends Camera2D
 
-var LastMouseCoords = get_global_mouse_position()
-var CurrentMouseCoords = LastMouseCoords
-var dragState = false
+var last_mouse_pos = get_global_mouse_position()
+var mouse_pos = last_mouse_pos
+var dragging = false
 
 func _process(delta):
-	if dragState:
-		CurrentMouseCoords = get_global_mouse_position()
-		var diff = (LastMouseCoords - CurrentMouseCoords).normalized() * 20
+	if dragging:
+		mouse_pos = get_global_mouse_position()
+		var diff = (last_mouse_pos - mouse_pos).normalized() * 20
 		translate(diff)
-		LastMouseCoords = CurrentMouseCoords
+		last_mouse_pos = mouse_pos
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_MIDDLE:
-		if not dragState:
-			dragState = true
+		if not dragging:
+			dragging = true
 		else:
-			dragState = false
+			dragging = false
