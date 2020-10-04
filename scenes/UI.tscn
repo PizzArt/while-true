@@ -131,10 +131,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 153.011, 91.7861 )
-zoom = Vector2( 0.3, 0.3 )
-
 [node name="Level1" type="HBoxContainer" parent="."]
 margin_left = 1.76777
 margin_top = 0.685613

@@ -11,7 +11,7 @@ preload("res://scenes/levels/LevelMoving2.tscn"),
 preload("res://scenes/text_levels/Tutorial2.tscn"),  # 5
 preload("res://scenes/levels/Level1.tscn"),
 preload("res://scenes/levels/Level2.tscn"),
-preload("res://scenes/levels/Level3.tscn"),
+#preload("res://scenes/levels/Level3.tscn"),
 preload("res://scenes/text_levels/Ending.tscn") # 9
 ]
 var tutorials = [0,2,5]
