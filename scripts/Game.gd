@@ -1,8 +1,6 @@
 extends Node2D
 
 var levels = [
-	preload("res://scenes/levels/LevelMoving3.tscn"),
-	
 preload("res://scenes/text_levels/Tutorial.tscn"), # 0
 preload("res://scenes/levels/Level0.tscn"),
 preload("res://scenes/text_levels/TutorialMoving.tscn"), # 2
