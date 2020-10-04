@@ -5,8 +5,8 @@ signal load_path_changed
 var current_tile = 1
 var start_placed = false
 var start_pos = Vector2()
-var draw = true
-var testing = false
+var draw = false
+var in_menu = true
 var level_save_path = ""
 var level_load_path = ""
 var level = preload("res://scenes/Example.tscn")
@@ -28,7 +28,7 @@ func _ready():
 
 
 func _process(_delta):
-	if draw and !testing:
+	if draw and not in_menu:
 		var mouse_pos = get_global_mouse_position()
 		var tile_pos = tilemap.map_to_world(tilemap.world_to_map(mouse_pos)) / 16
 		if Input.is_action_pressed("set"):
@@ -107,7 +107,8 @@ func finish_test():
 	tilemap = map
 	$"CL/UI/1".show()
 	$CL/UI/Finish.hide()
-	testing = false
+	draw = true
+	in_menu = false
 
 
 func _on_CheckButton_toggled(button_pressed):
@@ -147,13 +148,15 @@ func _on_Move_pressed():
 func _on_Menu_Button_pressed():
 	$CL/UI/Menu.show()
 	$"CL/UI/1".hide()
-	testing = true
+	draw = false
+	in_menu = true
 
 
 func _on_Return_pressed():
 	$CL/UI/Menu.hide()
 	$"CL/UI/1".show()
-	testing = false
+	draw = true
+	in_menu = false
 
 
 func _on_Save_pressed():
@@ -178,8 +181,10 @@ func _on_Quit_confirmed():
 
 
 func _on_Test_pressed():
-	if $TileMap.get_used_cells_by_id(8).size() == 1:
+	if $TileMap.get_used_cells_by_id(8).size():
 		test_level()
+	else:
+		$CL/UI/Menu/Dialogs/Start.popup()
 
 
 func _on_Finish_pressed():
@@ -196,13 +201,11 @@ func _on_Load_Dialog_file_selected(path):
 
 
 func _on_Load_Dialog_confirmed():
-	print("should pop up")
 	$CL/UI/Menu/Dialogs/Overwrite.popup()
 
 
 func _on_Overwrite_confirmed():
 	load_level()
-
 
 
 func _on_Area2D_mouse_entered():
@@ -213,4 +216,5 @@ func _on_Area2D_mouse_entered():
 func _on_HideButton_mouse_entered():
 	draw = false
 func _on_HideButton_mouse_exited():
+	print("yahoooooo")
 	draw = true
