@@ -60,7 +60,6 @@ __meta__ = {
 }
 
 [node name="Main" type="VBoxContainer" parent="MarginContainer"]
-visible = false
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 1004.0
@@ -190,6 +189,7 @@ text = "Back"
 flat = true
 
 [node name="Volume" type="MarginContainer" parent="MarginContainer"]
+visible = false
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 1004.0
