@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://misc/VPPixel-Simplified.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://misc/ui.tres" type="Theme" id=2]
@@ -19,11 +19,23 @@
 size = 64
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="DynamicFont" id=9]
 size = 32
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="DynamicFont" id=14]
 size = 88
 font_data = ExtResource( 1 )
 
@@ -76,7 +88,9 @@ margin_bottom = 334.0
 [node name="Play" type="Button" parent="MarginContainer/Main/VBoxContainer"]
 margin_right = 984.0
 margin_bottom = 56.2
-custom_fonts/font = SubResource( 7 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "Play"
 flat = true
@@ -85,16 +99,20 @@ flat = true
 margin_top = 60.0
 margin_right = 984.0
 margin_bottom = 116.2
-custom_fonts/font = SubResource( 7 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-text = "LVL Editor????"
+text = "Level Editor"
 flat = true
 
 [node name="Settings" type="Button" parent="MarginContainer/Main/VBoxContainer"]
 margin_top = 120.0
 margin_right = 984.0
 margin_bottom = 176.2
-custom_fonts/font = SubResource( 7 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "Settings"
 flat = true
@@ -103,14 +121,16 @@ flat = true
 margin_top = 180.0
 margin_right = 984.0
 margin_bottom = 236.2
-custom_fonts/font = SubResource( 7 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "Leave right now"
 flat = true
 
 [node name="arrow" type="Sprite" parent="MarginContainer/Main"]
 modulate = Color( 1, 1, 1, 0.2 )
-position = Vector2( 572.591, 76.5886 )
+position = Vector2( 562.83, 72.6844 )
 rotation = -2.45456
 scale = Vector2( 0.46894, 0.46894 )
 z_index = -2
@@ -118,7 +138,7 @@ texture = ExtResource( 4 )
 
 [node name="arrow2" type="Sprite" parent="MarginContainer/Main"]
 modulate = Color( 1, 1, 1, 0.2 )
-position = Vector2( 427.373, 79.1973 )
+position = Vector2( 417.612, 75.2931 )
 rotation = -3.81467
 scale = Vector2( 0.46894, 0.46894 )
 z_index = -2
@@ -126,7 +146,7 @@ texture = ExtResource( 4 )
 
 [node name="arrow3" type="Sprite" parent="MarginContainer/Main"]
 modulate = Color( 1, 1, 1, 0.2 )
-position = Vector2( 451.721, 202.676 )
+position = Vector2( 441.96, 198.772 )
 rotation = -5.49179
 scale = Vector2( 0.46894, 0.46894 )
 z_index = -2
@@ -134,7 +154,7 @@ texture = ExtResource( 4 )
 
 [node name="arrow4" type="Sprite" parent="MarginContainer/Main"]
 modulate = Color( 1, 1, 1, 0.2 )
-position = Vector2( 562.156, 193.98 )
+position = Vector2( 552.396, 190.076 )
 rotation = -7.01315
 scale = Vector2( 0.46894, 0.46894 )
 z_index = -2
@@ -150,7 +170,9 @@ margin_bottom = 580.0
 [node name="Volume" type="Button" parent="MarginContainer/Settings"]
 margin_right = 984.0
 margin_bottom = 56.2
-custom_fonts/font = SubResource( 7 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 11 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "Volume"
 flat = true
@@ -159,7 +181,9 @@ flat = true
 margin_top = 60.0
 margin_right = 984.0
 margin_bottom = 116.2
-custom_fonts/font = SubResource( 7 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 11 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "Back"
 flat = true
@@ -231,12 +255,13 @@ margin_left = 20.0
 margin_top = 32.0
 margin_right = 1004.0
 margin_bottom = 566.2
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 14 )
 text = "EASTER EGG! useless, if you found this then congrats, now you can close the game"
 align = 1
 autowrap = true
 [connection signal="pressed" from="MarginContainer/Main/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="MarginContainer/Main/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="MarginContainer/Main/VBoxContainer/Editor" to="." method="_on_Editor_pressed"]
 [connection signal="pressed" from="MarginContainer/Main/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="MarginContainer/Main/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="MarginContainer/Settings/Volume" to="." method="_on_Volume_pressed"]
