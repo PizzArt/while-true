@@ -1,15 +1,14 @@
 extends Node2D
 
-var levels = [preload("res://scenes/Tutorial.tscn").instance(),
-preload("res://scenes/levels/LevelMoving.tscn").instance(),
+var levels = [preload("res://scenes/text_levels/Tutorial.tscn").instance(),
 preload("res://scenes/levels/Level0.tscn").instance(), 
-preload("res://scenes/TutorialMoving.tscn").instance(),
-
-preload("res://scenes/Tutorial2.tscn").instance(),
+preload("res://scenes/text_levels/TutorialMoving.tscn").instance(),
+preload("res://scenes/levels/LevelMoving.tscn").instance(),
+preload("res://scenes/text_levels/Tutorial2.tscn").instance(),
 preload("res://scenes/levels/Level1.tscn").instance(),
 preload("res://scenes/levels/Level2.tscn").instance(),
 preload("res://scenes/levels/Level3.tscn").instance(),
-preload("res://scenes/Ending.tscn").instance(),
+preload("res://scenes/text_levels/Ending.tscn").instance(),
 ]
 var levelID = 0
 var lastLevel

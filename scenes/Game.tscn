@@ -6,14 +6,17 @@
 pause_mode = 2
 script = ExtResource( 1 )
 
+[node name="Around" type="Polygon2D" parent="."]
+z_index = 20
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0.102646, 163.288, 308.278, 163.288, 308.75, -16.9915, 0.102646, -17.4634, -0.287918, 224.626, -122.958, 210.676, -94.5888, -126.679, 464.042, -122.008, 432.006, 274.44, -100.596, 293.128, -140.446, 201.267 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 153.6, 72 )
 current = true
 zoom = Vector2( 0.3, 0.3 )
 
 [node name="Tween" type="Tween" parent="."]
-
-[node name="Sprite" type="Sprite" parent="."]
 
 [node name="Transition" type="Polygon2D" parent="."]
 z_index = 10

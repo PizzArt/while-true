@@ -33,9 +33,11 @@ func reload(funct = "reset()"):
 	cont(false)
 	
 	var j = 0
-	for i in $TileMap.get_used_cells_by_id(7):
-		$TileMap.set_cell(i.x, i.y, 1)
-		$TileMap.set_cellv(moving_default_position[j], 7)
+	print(moving_default_position.size())
+	for k in $TileMap.get_used_cells_by_id(7):    # DELETE ALL MOVING
+		$TileMap.set_cell(k.x, k.y, 1)
+	for i in moving_default_position.size():
+		$TileMap.set_cellv(moving_default_position[j], 7)  #RESET ALL MOVING
 		j+=1
 
 
@@ -73,15 +75,15 @@ func moving():
 	for i in $TileMap.get_used_cells_by_id(7):
 		if !$TileMap.is_cell_x_flipped(i.x, i.y):
 			if $TileMap.get_cell(i.x+1, i.y) == 1:
+				$TileMap.set_cell(i.x, i.y, 1)
 				$TileMap.set_cell(i.x + 1, i.y, 7)
-				$TileMap.set_cell(i.x, i.y, 1)
 			else:
-				$TileMap.set_cell(i.x - 1, i.y, 7, true)
 				$TileMap.set_cell(i.x, i.y, 1)
+				$TileMap.set_cell(i.x - 1, i.y, 7, true)
 		else:
 			if $TileMap.get_cell(i.x - 1, i.y) == 1:
+				$TileMap.set_cell(i.x, i.y, 1)
 				$TileMap.set_cell(i.x - 1, i.y, 7, true)
-				$TileMap.set_cell(i.x, i.y, 1)
 			else:
-				$TileMap.set_cell(i.x + 1, i.y, 7, false)
 				$TileMap.set_cell(i.x, i.y, 1)
+				$TileMap.set_cell(i.x + 1, i.y, 7, false)
