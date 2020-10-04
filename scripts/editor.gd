@@ -82,15 +82,14 @@ func test_level():
 	autosave()
 	var spawn = $TileMap.get_used_cells_by_id(8)[0]
 	print("spawn: ", spawn)
-#	$TileMap.position.x -= 16
+	$TileMap.position.x -= 8
+	$TileMap.position.y -= 8
 	var character = player.instance()
 	character.in_editor = true
 	var lvl = level.instance()
 	remove_child(tilemap)
 	lvl.add_child(tilemap)
 	character.position = start_pos * 16
-	character.position.y += 8
-	character.position.x += 8
 	lvl.add_child(character)
 	print(character.position, start_pos)
 	add_child(lvl)
