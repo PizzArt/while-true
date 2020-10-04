@@ -8,6 +8,8 @@ var moving_default_rotation: Array
 export var UItopTemplate = 0
 
 func _ready():
+	$UI.get_node("Debug").visible = true
+	$UI.get_node("Function").visible = true
 	$Player.steps = steps_reset
 	
 	match UItopTemplate:
