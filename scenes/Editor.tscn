@@ -18,7 +18,7 @@
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=3]
 size = 20
 font_data = ExtResource( 2 )
 
@@ -47,7 +47,7 @@ __meta__ = {
 [node name="CL" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CL"]
-margin_top = 128.0
+margin_top = -16.0
 margin_right = 192.0
 margin_bottom = 600.0
 color = Color( 0.145098, 0.145098, 0.145098, 0.705882 )
@@ -88,7 +88,7 @@ mouse_filter = 1
 size_flags_vertical = 3
 custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
-custom_fonts/normal_font = SubResource( 10 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[right]Use [color=#e68b85][wave amp=20 freq=3]LMB[/wave][/color] to place a [color=#85a2e6][wave amp=20 freq=3]tile[/wave][/color], [color=#e68b85][wave amp=20 freq=3]RMB[/wave][/color] to delete it, and hold [color=#e68b85][wave amp=20 freq=3]MMB[/wave][/color] to drag the camera.[/center]"
 text = "Use LMB to place a tile, RMB to delete it, and hold MMB to drag the camera.[/center]"

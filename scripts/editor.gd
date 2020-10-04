@@ -6,6 +6,7 @@ var current_tile = 1
 var start_placed = false
 var start_pos = Vector2()
 var draw = true
+var testing = false
 var level_save_path = ""
 var level_load_path = ""
 var level = preload("res://scenes/Example.tscn")
@@ -27,9 +28,7 @@ func _ready():
 
 
 func _process(_delta):
-	
-	
-	if draw:
+	if draw and !testing:
 		var mouse_pos = get_global_mouse_position()
 		var tile_pos = tilemap.map_to_world(tilemap.world_to_map(mouse_pos)) / 16
 		if Input.is_action_pressed("set"):
@@ -108,7 +107,7 @@ func finish_test():
 	tilemap = map
 	$"CL/UI/1".show()
 	$CL/UI/Finish.hide()
-	draw = true
+	testing = false
 
 
 func _on_CheckButton_toggled(button_pressed):
@@ -148,13 +147,13 @@ func _on_Move_pressed():
 func _on_Menu_Button_pressed():
 	$CL/UI/Menu.show()
 	$"CL/UI/1".hide()
-	draw = false
+	testing = true
 
 
 func _on_Return_pressed():
 	$CL/UI/Menu.hide()
 	$"CL/UI/1".show()
-	draw = true
+	testing = false
 
 
 func _on_Save_pressed():
