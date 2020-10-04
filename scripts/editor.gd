@@ -2,7 +2,6 @@ extends Control
 
 signal save_path_changed
 signal load_path_changed
-var target_zoom = Vector2(0.5,0.5)
 var current_tile = 1
 var start_placed = false
 var start_pos = Vector2()
@@ -24,12 +23,10 @@ onready var tilemap = $TileMap
 
 
 func _ready():
-	$Camera.zoom = Vector2(0.5, 0.5)
+	$CL/UI.mouse_filter = MOUSE_FILTER_IGNORE
 
 
 func _process(_delta):
-	zoom()
-	
 	if draw:
 		var mouse_pos = get_global_mouse_position()
 		var tile_pos = tilemap.map_to_world(tilemap.world_to_map(mouse_pos)) / 16
@@ -85,6 +82,7 @@ func test_level():
 	print("spawn: ", spawn)
 #	$TileMap.position.x -= 16
 	var character = player.instance()
+	character.in_editor = true
 	var lvl = level.instance()
 	remove_child(tilemap)
 	lvl.add_child(tilemap)
@@ -116,21 +114,6 @@ func _on_CheckButton_toggled(button_pressed):
 	if button_pressed:
 		$"CL/UI/1/2/HideButton".hide()
 		$"CL/UI/1/2/Text".hide()
-
-
-func _input(event):     # ZOOM
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			if event.button_index == BUTTON_WHEEL_UP:
-				target_zoom -= Vector2( 0.1, 0.1)
-			if event.button_index == BUTTON_WHEEL_DOWN:
-				target_zoom += Vector2( 0.1, 0.1 )
-			target_zoom.x = clamp(target_zoom.x, 0.3, 5)
-			target_zoom.y = target_zoom.x
-
-
-func zoom():
-	$Camera.zoom = $Camera.zoom.linear_interpolate(target_zoom, 0.2)
 
 
 func _on_BG_pressed():
@@ -219,3 +202,9 @@ func _on_Load_Dialog_confirmed():
 
 func _on_Overwrite_confirmed():
 	load_level()
+
+
+
+func _on_Area2D_mouse_entered():
+	draw = false
+	print("mouse entered")

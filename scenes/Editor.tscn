@@ -36,6 +36,7 @@ font_data = ExtResource( 2 )
 [node name="Editor" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
 theme = ExtResource( 1 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -47,6 +48,8 @@ __meta__ = {
 [node name="UI" type="MarginContainer" parent="CL"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
+mouse_default_cursor_shape = 3
 theme = ExtResource( 1 )
 custom_constants/margin_right = 30
 custom_constants/margin_top = 30
@@ -71,6 +74,7 @@ size_flags_vertical = 3
 [node name="Text" type="RichTextLabel" parent="CL/UI/1/2"]
 margin_right = 964.0
 margin_bottom = 110.0
+mouse_filter = 1
 size_flags_vertical = 3
 custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
@@ -127,7 +131,6 @@ custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 7 )
 toggle_mode = true
 pressed = true
-button_mask = 2
 text = "Background"
 icon = ExtResource( 4 )
 flat = true
@@ -144,7 +147,6 @@ size_flags_vertical = 3
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 7 )
 toggle_mode = true
-button_mask = 2
 text = "Start"
 icon = ExtResource( 6 )
 flat = true
@@ -161,7 +163,6 @@ size_flags_vertical = 3
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 7 )
 toggle_mode = true
-button_mask = 2
 text = "Wall"
 icon = ExtResource( 5 )
 flat = true
@@ -178,7 +179,6 @@ size_flags_vertical = 3
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 7 )
 toggle_mode = true
-button_mask = 2
 text = "Continue"
 icon = ExtResource( 9 )
 flat = true
@@ -195,7 +195,6 @@ size_flags_vertical = 3
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 7 )
 toggle_mode = true
-button_mask = 2
 text = "Break"
 icon = ExtResource( 7 )
 flat = true
@@ -212,7 +211,6 @@ size_flags_vertical = 3
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 7 )
 toggle_mode = true
-button_mask = 2
 text = "I = 10"
 icon = ExtResource( 8 )
 flat = true
@@ -229,7 +227,6 @@ size_flags_vertical = 3
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 7 )
 toggle_mode = true
-button_mask = 2
 text = "Movable"
 icon = ExtResource( 10 )
 flat = true
@@ -389,6 +386,7 @@ script = ExtResource( 12 )
 [connection signal="pressed" from="CL/UI/1/2/3/Tiles/Break" to="." method="_on_Break_pressed"]
 [connection signal="pressed" from="CL/UI/1/2/3/Tiles/I" to="." method="_on_I_pressed"]
 [connection signal="pressed" from="CL/UI/1/2/3/Tiles/Move" to="." method="_on_Move_pressed"]
+[connection signal="mouse_entered" from="CL/UI/1/2/Menu Button" to="." method="_on_Menu_Button_mouse_entered"]
 [connection signal="pressed" from="CL/UI/1/2/Menu Button" to="." method="_on_Menu_Button_pressed"]
 [connection signal="confirmed" from="CL/UI/Menu/Dialogs/Save Dialog" to="." method="_on_Save_Dialog_confirmed"]
 [connection signal="file_selected" from="CL/UI/Menu/Dialogs/Save Dialog" to="." method="_on_Save_Dialog_file_selected"]

@@ -5,6 +5,7 @@ onready var debug = $UI/Debug
 var moving_default_position: Array
 var moving_default_rotation: Array
 
+
 export var UItopTemplate = 0
 
 func _ready():
@@ -30,7 +31,6 @@ func _physics_process(delta):
 
 
 func reload(funct = "reset()"):
-	$Player.fails += 1
 	set_color("i5", Color("7bc796"))
 	show_func(funct)
 	$Player.steps = steps_reset
@@ -90,3 +90,4 @@ func moving():
 				$TileMap.set_cell(i.x - 1, i.y, 7, true)
 			else:
 				$TileMap.set_cell(i.x + 1, i.y, 7, false)
+
