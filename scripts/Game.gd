@@ -1,9 +1,10 @@
 extends Node2D
 
 var levels = [preload("res://scenes/Tutorial.tscn").instance(),
+preload("res://scenes/levels/LevelMoving.tscn").instance(),
 preload("res://scenes/levels/Level0.tscn").instance(), 
 preload("res://scenes/TutorialMoving.tscn").instance(),
-preload("res://scenes/levels/LevelMoving.tscn").instance(),
+
 preload("res://scenes/Tutorial2.tscn").instance(),
 preload("res://scenes/levels/Level1.tscn").instance(),
 preload("res://scenes/levels/Level2.tscn").instance(),

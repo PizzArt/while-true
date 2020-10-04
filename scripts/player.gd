@@ -10,6 +10,8 @@ var movement = Vector2()
 var default_position
 var default_cell
 
+var fails = 0
+
 var steps = 1
 var speed = 1
 
@@ -73,7 +75,10 @@ func check_cell():
 			can_move = false
 			$StepCooldown.stop()
 		MOVING:
-			get_parent().reload("die()")
+			$ReloadDelay.start()
+			$AnimationPlayer.play("reload")
+#			get_parent().reload("die()")
+			
 
 
 func next_step():

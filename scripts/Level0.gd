@@ -26,6 +26,7 @@ func _physics_process(delta):
 
 
 func reload(funct = "reset()"):
+	$Player.fails += 1
 	set_color("i5", Color("7bc796"))
 	show_func(funct)
 	$Player.steps = steps_reset
@@ -33,8 +34,8 @@ func reload(funct = "reset()"):
 	
 	var j = 0
 	for i in $TileMap.get_used_cells_by_id(7):
-		$TileMap.set_cellv(moving_default_position[j], 7)
 		$TileMap.set_cell(i.x, i.y, 1)
+		$TileMap.set_cellv(moving_default_position[j], 7)
 		j+=1
 
 

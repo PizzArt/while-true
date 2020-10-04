@@ -7,8 +7,10 @@
 background_mode = 4
 background_energy = 3.0
 glow_enabled = true
+glow_levels/3 = false
+glow_levels/4 = true
 glow_levels/5 = false
-glow_intensity = 1.71
+glow_intensity = 0.93
 glow_bloom = 0.12
 glow_blend_mode = 0
 
@@ -20,34 +22,6 @@ margin_left = 12.0
 margin_top = -3.0
 margin_right = 299.0
 margin_bottom = 179.0
-custom_fonts/mono_font = ExtResource( 1 )
-custom_fonts/normal_font = ExtResource( 1 )
-bbcode_enabled = true
-bbcode_text = "	You have to [img]sprites/tiles/break.png[/img][color=#ADF6FF] [wave freq=4]break;[/wave] [/color] to exit out of the [color=#FFF5AD][wave freq=4]while(true)[/wave][/color] loop. 
-	
-	You have [color=#FFADAD]i[/color] steps.
-	[img]sprites/tiles/i.png[/img] sets [color=#FFADAD]i[/color] to 10.
-
-"
-text = "	You have to  break;  to exit out of the while(true) loop. 
-	
-	You have i steps.
-	 sets i to 10.
-
-"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.372549 )
-margin_left = 11.0444
-margin_top = -3.97469
-margin_right = 298.044
-margin_bottom = 178.025
-rect_scale = Vector2( 1.012, 1.022 )
 custom_fonts/mono_font = ExtResource( 1 )
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
