@@ -18,7 +18,8 @@
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=10]
+size = 20
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxEmpty" id=4]
@@ -44,6 +45,15 @@ __meta__ = {
 }
 
 [node name="CL" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CL"]
+margin_top = 128.0
+margin_right = 192.0
+margin_bottom = 600.0
+color = Color( 0.145098, 0.145098, 0.145098, 0.705882 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="UI" type="MarginContainer" parent="CL"]
 anchor_right = 1.0
@@ -73,25 +83,22 @@ size_flags_vertical = 3
 
 [node name="Text" type="RichTextLabel" parent="CL/UI/1/2"]
 margin_right = 964.0
-margin_bottom = 110.0
+margin_bottom = 153.0
 mouse_filter = 1
 size_flags_vertical = 3
 custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 10 )
 bbcode_enabled = true
-bbcode_text = "[center]Welcome to the level editor! [color=lime][tornado radius=2 freq=2]Create[/tornado][/color] levels, [color=purple][tornado radius=2 freq=2]play[/tornado][/color] them, and [color=yellow][tornado radius=2 freq=2]share[/tornado][/color] them with your... uhh... friends? No, with your co-participators!
-Use [color=red][wave amp=20 freq=3]RMB[/wave][/color] to choose a [color=blue][wave amp=20 freq=3]tile[/wave][/color].
-Use [color=red][wave amp=20 freq=3]LMB[/wave][/color] to place a [color=blue][wave amp=20 freq=3]tile[/wave][/color], [color=red][wave amp=20 freq=3]RMB[/wave][/color] to delete it, and hold [color=red][wave amp=20 freq=3]MMB[/wave][/color] to drag the camera.[/center]"
-text = "Welcome to the level editor! Create levels, play them, and share them with your... uhh... friends? No, with your co-participators!
-Use RMB to choose a tile.
-Use LMB to place a tile, RMB to delete it, and hold MMB to drag the camera."
+bbcode_text = "[right]Use [color=#e68b85][wave amp=20 freq=3]LMB[/wave][/color] to place a [color=#85a2e6][wave amp=20 freq=3]tile[/wave][/color], [color=#e68b85][wave amp=20 freq=3]RMB[/wave][/color] to delete it, and hold [color=#e68b85][wave amp=20 freq=3]MMB[/wave][/color] to drag the camera.[/center]"
+text = "Use LMB to place a tile, RMB to delete it, and hold MMB to drag the camera.[/center]"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HideButton" type="CheckButton" parent="CL/UI/1/2"]
+visible = false
 margin_left = 584.2
 margin_top = 114.0
 margin_right = 964.0
@@ -99,7 +106,6 @@ margin_bottom = 153.2
 size_flags_horizontal = 8
 custom_styles/pressed = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
-button_mask = 2
 text = "Hide the text. Oh, and the button too."
 flat = true
 
@@ -239,12 +245,10 @@ margin_top = 501.0
 margin_right = 59.8
 margin_bottom = 540.2
 size_flags_horizontal = 0
-button_mask = 2
 text = "Menu"
 flat = true
 
 [node name="Menu" type="VBoxContainer" parent="CL/UI"]
-visible = false
 margin_left = 30.0
 margin_top = 30.0
 margin_right = 994.0
@@ -311,10 +315,7 @@ margin_left = 446.0
 margin_right = 516.8
 margin_bottom = 39.2
 size_flags_horizontal = 4
-custom_styles/pressed = SubResource( 8 )
-custom_styles/focus = SubResource( 9 )
 text = "Return"
-flat = true
 
 [node name="Test" type="Button" parent="CL/UI/Menu/Buttons"]
 margin_left = 456.0
@@ -378,6 +379,8 @@ tile_set = ExtResource( 13 )
 current = true
 smoothing_enabled = true
 script = ExtResource( 12 )
+[connection signal="mouse_entered" from="CL/UI/1/2/HideButton" to="." method="_on_HideButton_mouse_entered"]
+[connection signal="mouse_exited" from="CL/UI/1/2/HideButton" to="." method="_on_HideButton_mouse_exited"]
 [connection signal="toggled" from="CL/UI/1/2/HideButton" to="." method="_on_CheckButton_toggled"]
 [connection signal="pressed" from="CL/UI/1/2/3/Tiles/BG" to="." method="_on_BG_pressed"]
 [connection signal="pressed" from="CL/UI/1/2/3/Tiles/Start" to="." method="_on_Start_pressed"]

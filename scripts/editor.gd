@@ -27,6 +27,8 @@ func _ready():
 
 
 func _process(_delta):
+	
+	
 	if draw:
 		var mouse_pos = get_global_mouse_position()
 		var tile_pos = tilemap.map_to_world(tilemap.world_to_map(mouse_pos)) / 16
@@ -208,3 +210,9 @@ func _on_Overwrite_confirmed():
 func _on_Area2D_mouse_entered():
 	draw = false
 	print("mouse entered")
+
+
+func _on_HideButton_mouse_entered():
+	draw = false
+func _on_HideButton_mouse_exited():
+	draw = true

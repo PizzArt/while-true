@@ -8,11 +8,18 @@ var target_zoom: Vector2
 var zoom_speed = Vector2(0.05, 0.05)
 
 func _ready():
-	zoom = Vector2(0.5, 0.5)
+	zoom = Vector2(1, 1)
 	target_zoom = zoom
 
 
 func _process(delta):
+	var mous_pos = get_local_mouse_position()
+#	print(mous_pos)
+	if mous_pos.y < -300 * zoom.x or mous_pos.y > 300 * zoom.x or mous_pos.x < -310 * zoom.x or mous_pos.x > 800:
+		get_parent().draw = false
+	else:
+		get_parent().draw = true
+		
 	zoom()
 	if dragging:
 		if reset:
