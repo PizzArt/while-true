@@ -2,7 +2,7 @@
 
 [ext_resource path="res://sprites/tilemaps/tilemap.png" type="Texture" id=1]
 
-[sub_resource type="TileSet" id=6]
+[sub_resource type="TileSet" id=1]
 0/name = "BG"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
@@ -103,6 +103,6 @@
 6/z_index = 0
 
 [node name="Level" type="TileMap"]
-tile_set = SubResource( 6 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
