@@ -34,6 +34,7 @@ func reload(funct = "reset()"):
 	set_color("i5", Color("7bc796"))
 	show_func(funct)
 	$Player.steps = steps_reset
+	$Player.speed = 1
 	cont(false)
 	
 	var j = 0
