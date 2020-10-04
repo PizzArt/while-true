@@ -2,7 +2,7 @@ extends Control
 
 signal save_path_changed
 signal load_path_changed
-var current_tile = 0
+var current_tile = 1
 var start_placed = false
 var start_pos = Vector2()
 var draw = true
@@ -10,13 +10,15 @@ var level_save_path = ""
 var level_load_path = ""
 var level = preload("res://scenes/Example.tscn")
 var player = preload("res://scenes/Player.tscn")
-onready var buttons = [$"CL/UI/1/2/3/Tiles/BG",
+onready var buttons = [
+	$"CL/UI/1/2/3/Tiles/BG",
 	$"CL/UI/1/2/3/Tiles/Start",
 	$"CL/UI/1/2/3/Tiles/Wall",
 	$"CL/UI/1/2/3/Tiles/Continue",
 	$"CL/UI/1/2/3/Tiles/Break",
 	$"CL/UI/1/2/3/Tiles/I",
-	$"CL/UI/1/2/3/Tiles/Move"]
+	$"CL/UI/1/2/3/Tiles/Move"
+]
 onready var tilemap = $TileMap
 
 
@@ -25,7 +27,7 @@ func _process(_delta):
 		var mouse_pos = get_global_mouse_position()
 		var tile_pos = tilemap.map_to_world(tilemap.world_to_map(mouse_pos)) / 16
 		if Input.is_action_pressed("set"):
-			if current_tile == 1:
+			if current_tile == 8:
 				if !start_placed:
 					tilemap.set_cellv(tile_pos, current_tile)
 					start_pos = tile_pos
@@ -69,10 +71,10 @@ func test_level():
 	var lvl = level.instance()
 	remove_child(tilemap)
 	lvl.add_child(tilemap)
-	lvl.add_child(character)
 	character.position = start_pos * 16
 	character.position.y += 8
 	character.position.x += 8
+	lvl.add_child(character)
 	print(character.position, start_pos)
 	add_child(lvl)
 	$CL/UI/Menu.hide()
@@ -91,31 +93,31 @@ func _on_CheckButton_toggled(button_pressed):
 
 
 func _on_BG_pressed():
-	toggle(buttons[0], 0)
+	toggle(buttons[0], 1)
 
 
 func _on_Start_pressed():
-	toggle(buttons[1], 1)
+	toggle(buttons[1], 8)
 
 
 func _on_Wall_pressed():
-	toggle(buttons[2], 2)
+	toggle(buttons[2], 0)
 
 
 func _on_Continue_pressed():
-	toggle(buttons[3], 5)
+	toggle(buttons[3], 6)
 
 
 func _on_Break_pressed():
-	toggle(buttons[4], 4)
+	toggle(buttons[4], 5)
 
 
 func _on_I_pressed():
-	toggle(buttons[5], 3)
+	toggle(buttons[5], 4)
 
 
 func _on_Move_pressed():
-	toggle(buttons[6], 6)
+	toggle(buttons[6], 7)
 
 
 func _on_Menu_Button_pressed():

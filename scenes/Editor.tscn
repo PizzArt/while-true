@@ -14,16 +14,12 @@
 [ext_resource path="res://scripts/editor_camera.gd" type="Script" id=12]
 [ext_resource path="res://misc/TileSet.tres" type="TileSet" id=13]
 
-[sub_resource type="StyleBoxEmpty" id=8]
-
-[sub_resource type="StyleBoxEmpty" id=9]
-
-[sub_resource type="DynamicFont" id=10]
-font_data = ExtResource( 2 )
-
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
@@ -32,6 +28,10 @@ font_data = ExtResource( 2 )
 [sub_resource type="StyleBoxEmpty" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
 
 [node name="Editor" type="Control"]
 anchor_right = 1.0
@@ -72,9 +72,9 @@ size_flags_vertical = 3
 margin_right = 964.0
 margin_bottom = 110.0
 size_flags_vertical = 3
-custom_styles/focus = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-custom_fonts/normal_font = SubResource( 10 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center]Welcome to the level editor! [color=lime][tornado radius=2 freq=2]Create[/tornado][/color] levels, [color=purple][tornado radius=2 freq=2]play[/tornado][/color] them, and [color=yellow][tornado radius=2 freq=2]share[/tornado][/color] them with your... uhh... friends? No, with your co-participators!
 Use [color=red][wave amp=20 freq=3]RMB[/wave][/color] to choose a [color=blue][wave amp=20 freq=3]tile[/wave][/color].
@@ -93,8 +93,8 @@ margin_top = 114.0
 margin_right = 964.0
 margin_bottom = 153.2
 size_flags_horizontal = 8
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 2 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
 button_mask = 2
 text = "Hide the text. Oh, and the button too."
 flat = true
@@ -123,8 +123,8 @@ margin_right = 129.8
 margin_bottom = 82.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
 toggle_mode = true
 pressed = true
 button_mask = 2
@@ -141,8 +141,8 @@ margin_right = 129.0
 margin_bottom = 125.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
 toggle_mode = true
 button_mask = 2
 text = "Start"
@@ -158,8 +158,8 @@ margin_right = 129.0
 margin_bottom = 168.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
 toggle_mode = true
 button_mask = 2
 text = "Wall"
@@ -175,8 +175,8 @@ margin_right = 129.0
 margin_bottom = 211.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
 toggle_mode = true
 button_mask = 2
 text = "Continue"
@@ -192,8 +192,8 @@ margin_right = 129.0
 margin_bottom = 254.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
 toggle_mode = true
 button_mask = 2
 text = "Break"
@@ -209,8 +209,8 @@ margin_right = 129.0
 margin_bottom = 297.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
 toggle_mode = true
 button_mask = 2
 text = "I = 10"
@@ -226,8 +226,8 @@ margin_right = 129.0
 margin_bottom = 340.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
 toggle_mode = true
 button_mask = 2
 text = "Movable"
@@ -314,8 +314,8 @@ margin_left = 446.0
 margin_right = 516.8
 margin_bottom = 39.2
 size_flags_horizontal = 4
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
 text = "Return"
 flat = true
 
@@ -325,8 +325,8 @@ margin_top = 43.0
 margin_right = 506.8
 margin_bottom = 82.2
 size_flags_horizontal = 4
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
 text = "Test"
 flat = true
 
@@ -336,8 +336,8 @@ margin_top = 86.0
 margin_right = 510.8
 margin_bottom = 125.2
 size_flags_horizontal = 4
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
 text = "Save"
 flat = true
 
@@ -347,8 +347,8 @@ margin_top = 129.0
 margin_right = 508.8
 margin_bottom = 168.2
 size_flags_horizontal = 4
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
 text = "Load"
 flat = true
 
@@ -358,8 +358,8 @@ margin_top = 172.0
 margin_right = 534.8
 margin_bottom = 211.2
 size_flags_horizontal = 4
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
 text = "Main Menu"
 flat = true
 

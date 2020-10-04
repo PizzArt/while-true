@@ -22,6 +22,7 @@ func _ready():
 	default_position = position
 	current_cell_pos = Vector2(int(position.x/16), int(position.y/16) )
 	default_cell = current_cell_pos
+	print("default cell: ", default_cell)
 
 
 func _process(delta):
