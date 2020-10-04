@@ -60,6 +60,7 @@ __meta__ = {
 }
 
 [node name="Main" type="VBoxContainer" parent="MarginContainer"]
+visible = false
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 1004.0
@@ -188,50 +189,61 @@ custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "Back"
 flat = true
 
-[node name="Volume" type="VBoxContainer" parent="MarginContainer"]
-visible = false
+[node name="Volume" type="MarginContainer" parent="MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 1004.0
 margin_bottom = 580.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 350
+custom_constants/margin_top = 50
+custom_constants/margin_left = 350
 
-[node name="Music" type="VBoxContainer" parent="MarginContainer/Volume"]
-margin_right = 984.0
+[node name="Volume" type="VBoxContainer" parent="MarginContainer/Volume"]
+margin_left = 350.0
+margin_top = 50.0
+margin_right = 634.0
+margin_bottom = 560.0
+custom_constants/separation = 20
+
+[node name="Music" type="VBoxContainer" parent="MarginContainer/Volume/Volume"]
+margin_right = 284.0
 margin_bottom = 61.0
 
-[node name="Label" type="Label" parent="MarginContainer/Volume/Music"]
+[node name="Label" type="Label" parent="MarginContainer/Volume/Volume/Music"]
 margin_top = -1.0
-margin_right = 984.0
+margin_right = 284.0
 margin_bottom = 38.2
 text = "Music"
 
-[node name="Music Slider" type="HSlider" parent="MarginContainer/Volume/Music"]
+[node name="Music Slider" type="HSlider" parent="MarginContainer/Volume/Volume/Music"]
 margin_top = 43.0
-margin_right = 984.0
+margin_right = 284.0
 margin_bottom = 61.0
 value = 50.0
 
-[node name="Sound" type="VBoxContainer" parent="MarginContainer/Volume"]
-margin_top = 65.0
-margin_right = 984.0
-margin_bottom = 126.0
+[node name="Sound" type="VBoxContainer" parent="MarginContainer/Volume/Volume"]
+margin_top = 81.0
+margin_right = 284.0
+margin_bottom = 142.0
 
-[node name="Label" type="Label" parent="MarginContainer/Volume/Sound"]
+[node name="Label" type="Label" parent="MarginContainer/Volume/Volume/Sound"]
 margin_top = -1.0
-margin_right = 984.0
+margin_right = 284.0
 margin_bottom = 38.2
 text = "Sound"
 
-[node name="Sound Slider" type="HSlider" parent="MarginContainer/Volume/Sound"]
+[node name="Sound Slider" type="HSlider" parent="MarginContainer/Volume/Volume/Sound"]
 margin_top = 43.0
-margin_right = 984.0
+margin_right = 284.0
 margin_bottom = 61.0
 value = 50.0
 
-[node name="Volume Back" type="Button" parent="MarginContainer/Volume"]
-margin_top = 130.0
-margin_right = 984.0
-margin_bottom = 169.2
+[node name="Volume Back" type="Button" parent="MarginContainer/Volume/Volume"]
+margin_top = 162.0
+margin_right = 284.0
+margin_bottom = 201.2
 custom_styles/pressed = SubResource( 12 )
 custom_styles/focus = SubResource( 13 )
 text = "Back"
@@ -254,6 +266,6 @@ autowrap = true
 [connection signal="pressed" from="MarginContainer/Main/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="MarginContainer/Settings/Volume" to="." method="_on_Volume_pressed"]
 [connection signal="pressed" from="MarginContainer/Settings/Settings Back" to="." method="_on_Settings_Back_pressed"]
-[connection signal="value_changed" from="MarginContainer/Volume/Music/Music Slider" to="." method="_on_Music_Slider_value_changed"]
-[connection signal="value_changed" from="MarginContainer/Volume/Sound/Sound Slider" to="." method="_on_Sound_Slider_value_changed"]
-[connection signal="pressed" from="MarginContainer/Volume/Volume Back" to="." method="_on_Volume_Back_pressed"]
+[connection signal="value_changed" from="MarginContainer/Volume/Volume/Music/Music Slider" to="." method="_on_Music_Slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/Volume/Volume/Sound/Sound Slider" to="." method="_on_Sound_Slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/Volume/Volume/Volume Back" to="." method="_on_Volume_Back_pressed"]
