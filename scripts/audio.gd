@@ -39,13 +39,14 @@ func play(audio: String, volume = 0, pitch = 0, loop = false):
 	audio_player.pitch_scale = rng.randfn(1, pitch)
 	if "music" in audio:
 		audio_player.bus = "Music"
-		if playing_music:
-			get_node(playing_music).queue_free()
-		playing_music = audio_player.name
 	elif "sounds" in audio:
 		audio_player.bus = "Sound"
 	
 	add_child(audio_player)
+	if "music" in audio:
+		if playing_music:
+			get_node(playing_music).queue_free()
+		playing_music = audio_player.name
 	audio_player.play()
 	
 	yield(audio_player, "finished")
