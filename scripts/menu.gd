@@ -8,7 +8,7 @@ onready var mus_slider = $"MarginContainer/Volume/Volume/Music/Music Slider"
 onready var sfx_slider = $"MarginContainer/Volume/Volume/Sound/Sound Slider"
 
 func _ready():
-	Audio.play(Audio.song_dict.get("dancing_square"), -5, 0, true)
+#	Audio.play(Audio.song_dict.get("dancing_square"), -40, 0, true)
 	startup()
 
 
@@ -31,6 +31,7 @@ func startup():
 
 
 func _on_Play_pressed():
+	Audio.stop_music()
 	get_tree().change_scene("res://scenes/Game.tscn")
 
 

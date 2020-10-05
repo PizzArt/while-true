@@ -1,8 +1,6 @@
 extends Node2D
 
 var levels = [
-preload("res://scenes/levels/LevelMovingLong.tscn"),
-preload("res://scenes/levels/LevelSpeed2.tscn"),
 preload("res://scenes/text_levels/Tutorial.tscn"), # 0
 preload("res://scenes/levels/Level0.tscn"),
 preload("res://scenes/text_levels/TutorialMoving.tscn"), # 2
@@ -68,7 +66,7 @@ func loadLevel(levelID):
 	$Tween.interpolate_property(Trans, "color:a", Trans.color.a, 0, transLength,
 	 Tween.TRANS_CUBIC, Tween.EASE_OUT)
 	$Tween.start()
-	Audio.play("res://audio/sounds/spawn1.wav", -15, 0.15)
+#	Audio.play("res://audio/sounds/spawn1.wav", -15, 0.15)
 	
 	var next = levels[levelID]
 	add_child(next.instance())

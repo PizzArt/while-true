@@ -78,7 +78,7 @@ func check_cell():
 				get_parent().get_parent().next_level()
 				can_move = false
 				$StepCooldown.stop()
-				Audio.play("res://audio/sounds/complete1.wav", -5, 0.15)
+				Audio.play("res://audio/sounds/complete1.wav", -10, 0.15)
 			else:
 				get_parent().reload()
 		MOVING:
