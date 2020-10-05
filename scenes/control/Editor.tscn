@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://misc/UI.tres" type="Theme" id=1]
 [ext_resource path="res://misc/VPPixel-Simplified.otf" type="DynamicFontData" id=2]
@@ -16,6 +16,11 @@
 [ext_resource path="res://sprites/tiles/1x.png" type="Texture" id=14]
 [ext_resource path="res://scripts/tilemap.gd" type="Script" id=15]
 [ext_resource path="res://sprites/tiles/2x.png" type="Texture" id=16]
+[ext_resource path="res://sprites/icons/editoricon2.png" type="Texture" id=17]
+[ext_resource path="res://sprites/icons/editoricon4.png" type="Texture" id=18]
+[ext_resource path="res://sprites/icons/editoricon3.png" type="Texture" id=19]
+[ext_resource path="res://sprites/icons/editoricon5.png" type="Texture" id=20]
+[ext_resource path="res://sprites/icons/editoricon1.png" type="Texture" id=21]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -242,23 +247,23 @@ __meta__ = {
 
 [node name="Empty" type="Control" parent="CL/UI/1/2/3"]
 margin_left = 133.0
-margin_right = 869.0
+margin_right = 879.0
 margin_bottom = 418.0
 size_flags_horizontal = 3
 
 [node name="Tools" type="VBoxContainer" parent="CL/UI/1/2/3"]
-margin_left = 873.0
+margin_left = 883.0
 margin_right = 964.0
 margin_bottom = 418.0
 
 [node name="Empty space" type="Control" parent="CL/UI/1/2/3/Tools"]
-margin_right = 91.0
+margin_right = 81.0
 margin_bottom = 103.0
 size_flags_vertical = 3
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CL/UI/1/2/3/Tools"]
 margin_top = 107.0
-margin_right = 91.0
+margin_right = 81.0
 margin_bottom = 138.0
 custom_styles/normal = SubResource( 7 )
 text = "    Edit"
@@ -267,85 +272,84 @@ scroll_active = false
 
 [node name="Clear" type="Button" parent="CL/UI/1/2/3/Tools"]
 margin_top = 142.0
-margin_right = 91.8
+margin_right = 81.8
 margin_bottom = 181.2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-toggle_mode = true
-text = "Delete all"
+text = " Clear"
+icon = ExtResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Left+Right" type="HBoxContainer" parent="CL/UI/1/2/3/Tools"]
 margin_top = 185.0
-margin_right = 91.0
+margin_right = 81.0
 margin_bottom = 224.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Left" type="Button" parent="CL/UI/1/2/3/Tools/Left+Right"]
-margin_right = 43.0
+margin_right = 38.0
 margin_bottom = 39.2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-toggle_mode = true
-text = "<"
+icon = ExtResource( 17 )
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Right" type="Button" parent="CL/UI/1/2/3/Tools/Left+Right"]
-margin_left = 47.0
-margin_right = 91.0
+margin_left = 42.0
+margin_right = 81.0
 margin_bottom = 39.2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-toggle_mode = true
-text = ">"
+icon = ExtResource( 18 )
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Up+Down" type="HBoxContainer" parent="CL/UI/1/2/3/Tools"]
 margin_top = 228.0
-margin_right = 91.0
+margin_right = 81.0
 margin_bottom = 267.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Up" type="Button" parent="CL/UI/1/2/3/Tools/Up+Down"]
-margin_right = 43.0
+margin_right = 38.0
 margin_bottom = 39.2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-toggle_mode = true
-text = "^"
+icon = ExtResource( 19 )
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Down" type="Button" parent="CL/UI/1/2/3/Tools/Up+Down"]
-margin_left = 47.0
-margin_right = 91.0
+margin_left = 42.0
+margin_right = 81.0
 margin_bottom = 39.2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-toggle_mode = true
-text = "^"
+icon = ExtResource( 20 )
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Fill" type="Button" parent="CL/UI/1/2/3/Tools"]
 margin_top = 271.0
-margin_right = 91.0
+margin_right = 81.0
 margin_bottom = 310.2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-toggle_mode = true
 text = "Fill"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -353,7 +357,7 @@ __meta__ = {
 
 [node name="Empty space2" type="Control" parent="CL/UI/1/2/3/Tools"]
 margin_top = 314.0
-margin_right = 91.0
+margin_right = 81.0
 margin_bottom = 418.0
 size_flags_vertical = 3
 
