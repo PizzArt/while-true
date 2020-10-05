@@ -32,6 +32,7 @@ func startup():
 
 func _on_Play_pressed():
 	Audio.stop_music()
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	get_tree().change_scene("res://scenes/Game.tscn")
 
 
@@ -41,6 +42,7 @@ func _on_Quit_pressed():
 
 
 func _on_Button_pressed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	if counter < easter_egg.size():
 		$MarginContainer/Main/Button.text = easter_egg[counter]
 	if counter >= easter_egg.size():
@@ -50,21 +52,25 @@ func _on_Button_pressed():
 
 
 func _on_Volume_pressed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	$MarginContainer/Settings.hide()
 	$MarginContainer/Volume.show()
 
 
 func _on_Settings_Back_pressed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	$MarginContainer/Settings.hide()
 	$MarginContainer/Main.show()
 
 
 func _on_Settings_pressed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	$MarginContainer/Main.hide()
 	$MarginContainer/Settings.show()
 
 
 func _on_Volume_Back_pressed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	$MarginContainer/Settings.hide()
 	$MarginContainer/Main.show()
 
@@ -81,4 +87,5 @@ func _on_Sound_Slider_value_changed(value):
 
 func _on_Editor_pressed():
 	Audio.stop_music()
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	get_tree().change_scene("res://scenes/control/Editor.tscn")

@@ -86,8 +86,8 @@ custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[center]Use [color=#e68b85][wave amp=20 freq=3]LMB[/wave][/color] to place a [color=#85a2e6][wave amp=20 freq=3]tile[/wave][/color], [color=#e68b85][wave amp=20 freq=3]RMB[/wave][/color] to delete it, and hold [color=#e68b85][wave amp=20 freq=3]MMB[/wave][/color] to drag the camera.[/center]"
-text = "Use LMB to place a tile, RMB to delete it, and hold MMB to drag the camera."
+bbcode_text = "[center]Use [color=#e68b85][wave amp=20 freq=3]LMB[/wave][/color] to place a [color=#85a2e6][wave amp=20 freq=3]tile[/wave][/color], [color=#e68b85][wave amp=20 freq=3]RMB[/wave][/color] to delete it, hold [color=#e68b85][wave amp=20 freq=3]MMB[/wave][/color] to drag the camera, and use the [color=#e68b85][wave amp=20 freq=3]wheel[/wave][/color] to zoom in and out.[/center]"
+text = "Use LMB to place a tile, RMB to delete it, hold MMB to drag the camera, and use the wheel to zoom in and out."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -379,7 +379,7 @@ alignment = 1
 [node name="Dialogs" type="VBoxContainer" parent="CL/UI/Menu"]
 visible = false
 margin_right = 964.0
-margin_bottom = 420.0
+margin_bottom = 325.0
 size_flags_vertical = 3
 
 [node name="Save Dialog" type="FileDialog" parent="CL/UI/Menu/Dialogs"]
@@ -437,9 +437,9 @@ window_title = "Oops..."
 dialog_text = "You cannot test a level without a starting point. Where would the player be?"
 
 [node name="Buttons" type="MarginContainer" parent="CL/UI/Menu"]
-margin_top = 212.0
+margin_top = 329.0
 margin_right = 964.0
-margin_bottom = 423.0
+margin_bottom = 540.0
 custom_constants/margin_right = 350
 custom_constants/margin_left = 350
 
