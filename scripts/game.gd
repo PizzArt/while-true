@@ -17,6 +17,7 @@ preload("res://scenes/levels/LevelMoving3.tscn"),
 preload("res://scenes/levels/LevelMovingLong.tscn"),
 preload("res://scenes/text_levels/Ending.tscn") # 9
 ]
+
 var tutorials = [0,2,5]
 var tutorials_completed = 0
 

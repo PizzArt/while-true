@@ -1,5 +1,10 @@
 extends Node
 
+var song_dict = {
+	"dancing_cube": "res://audio/music/Dancing Square.wav",
+	"song1": "res://audio/music/ld47_1.wav"
+}
+
 var config = ConfigFile.new()
 var err = config.load("user://wt_settings.cfg")
 var mus_vol
