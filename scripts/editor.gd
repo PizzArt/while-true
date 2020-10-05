@@ -1,5 +1,7 @@
 extends Control
 
+enum {WALL, BG, SPD2, SPD1, I5, FINISH, RELOAD, MOVING, RESPAWN}
+
 signal save_path_changed
 signal load_path_changed
 var bounds = Vector2(-10, 9)
@@ -27,9 +29,15 @@ onready var tilemap = $TileMap
 
 
 func _ready():
+	bound()
 	get_node("CL/UI/1").visible = false
 	get_node("CL/UI/Menu").visible = true
 	$CL/UI.mouse_filter = MOUSE_FILTER_IGNORE
+
+
+func bound():
+	for i in range(bounds.x, bounds.y + 1):
+		for j in range(bounds.x, bounds.y + 1):
 
 
 func _process(_delta):
@@ -146,6 +154,10 @@ func _input(event):
 		_on_Speed1_pressed()
 
 
+
+
+
+
 func _on_BG_pressed():
 	toggle(buttons[0], 1)
 
@@ -180,6 +192,10 @@ func _on_Speed2_pressed():
 
 func _on_Speed1_pressed():
 	toggle(buttons[8], 3)
+
+
+
+
 
 
 func _on_Menu_Button_pressed():
@@ -255,3 +271,40 @@ func _on_HideButton_mouse_exited():
 	draw = true
 
 
+
+ # TOOLS
+
+func _on_Clear_pressed():
+	$TileMap.clear()
+
+
+func _on_Left_pressed():
+	for i in range(bounds.x, bounds.y + 1):
+		for j in range(bounds.x, bounds.y + 1):
+			$TileMap.set_cell(i, j, $TileMap.get_cell(i + 1, j) )
+
+
+func _on_Right_pressed():
+	print(-bounds.y, -bounds.x + 1)
+	for i in range(-bounds.y, -bounds.x + 1):
+		for j in range(-bounds.y - 1, -bounds.x):
+			$TileMap.set_cell(-i, j, $TileMap.get_cell(-i - 1, j) )
+
+
+func _on_Up_pressed():
+	for i in range(bounds.x, bounds.y + 1):
+		for j in range(bounds.x, bounds.y + 1):
+			$TileMap.set_cell(j, i, $TileMap.get_cell(j, i + 1) )
+
+
+func _on_Down_pressed():
+	for i in range(-bounds.y, -bounds.x + 1):
+		for j in range(-bounds.y - 1, -bounds.x):
+			$TileMap.set_cell(j, -i, $TileMap.get_cell(j, -i - 1) )
+
+
+func _on_Fill_pressed():
+	if current_tile != RESPAWN:
+		for i in range(bounds.x, bounds.y + 1):
+			for j in range(bounds.x, bounds.y + 1):
+				$TileMap.set_cell(i, j, current_tile)
