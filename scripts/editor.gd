@@ -16,7 +16,6 @@ var level = preload("res://scenes/Example.tscn")
 var player = preload("res://scenes/Player.tscn")
 var brush_size = 1
 onready var buttons = [
-	$"CL/UI/1/2/3/Tiles/BG",
 	$"CL/UI/1/2/3/Tiles/Start",
 	$"CL/UI/1/2/3/Tiles/Wall",
 	$"CL/UI/1/2/3/Tiles/Continue",
@@ -137,22 +136,20 @@ func finish_test():
 func _input(event):
 	var just_pressed = event.is_pressed() and not event.is_echo()
 	if Input.is_key_pressed(KEY_1) and just_pressed:
-		_on_BG_pressed()
-	if Input.is_key_pressed(KEY_2) and just_pressed:
 		_on_Start_pressed()
-	if Input.is_key_pressed(KEY_3) and just_pressed:
+	if Input.is_key_pressed(KEY_2) and just_pressed:
 		_on_Wall_pressed()
-	if Input.is_key_pressed(KEY_4) and just_pressed:
+	if Input.is_key_pressed(KEY_3) and just_pressed:
 		_on_Continue_pressed()
-	if Input.is_key_pressed(KEY_5) and just_pressed:
+	if Input.is_key_pressed(KEY_4) and just_pressed:
 		_on_Break_pressed()
-	if Input.is_key_pressed(KEY_6) and just_pressed:
+	if Input.is_key_pressed(KEY_5) and just_pressed:
 		_on_I_pressed()
-	if Input.is_key_pressed(KEY_7) and just_pressed:
+	if Input.is_key_pressed(KEY_6) and just_pressed:
 		_on_Move_pressed()
-	if Input.is_key_pressed(KEY_8) and just_pressed:
+	if Input.is_key_pressed(KEY_7) and just_pressed:
 		_on_Speed2_pressed()
-	if Input.is_key_pressed(KEY_9) and just_pressed:
+	if Input.is_key_pressed(KEY_8) and just_pressed:
 		_on_Speed1_pressed()
 
 
@@ -160,40 +157,36 @@ func _input(event):
 
 
 
-func _on_BG_pressed():
-	toggle(buttons[0], 1)
-
-
 func _on_Start_pressed():
-	toggle(buttons[1], 8)
+	toggle(buttons[0], 8)
 
 
 func _on_Wall_pressed():
-	toggle(buttons[2], 0)
+	toggle(buttons[1], 0)
 
 
 func _on_Continue_pressed():
-	toggle(buttons[3], 6)
+	toggle(buttons[2], 6)
 
 
 func _on_Break_pressed():
-	toggle(buttons[4], 5)
+	toggle(buttons[3], 5)
 
 
 func _on_I_pressed():
-	toggle(buttons[5], 4)
+	toggle(buttons[4], 4)
 
 
 func _on_Move_pressed():
-	toggle(buttons[6], 7)
+	toggle(buttons[5], 7)
 
 
 func _on_Speed2_pressed():
-	toggle(buttons[7], 2)
+	toggle(buttons[6], 2)
 
 
 func _on_Speed1_pressed():
-	toggle(buttons[8], 3)
+	toggle(buttons[7], 3)
 
 
 
@@ -289,7 +282,9 @@ func _on_HideButton_mouse_exited():
  # TOOLS
 
 func _on_Clear_pressed():
-	$TileMap.clear()
+	for i in range(bounds.x, bounds.y + 1):
+		for j in range(bounds.x, bounds.y + 1):
+			$TileMap.set_cell(i, j, BG)
 	bound()
 
 

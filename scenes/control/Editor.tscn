@@ -1,9 +1,8 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://misc/UI.tres" type="Theme" id=1]
 [ext_resource path="res://misc/VPPixel-Simplified.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/editor.gd" type="Script" id=3]
-[ext_resource path="res://sprites/tiles/floor.png" type="Texture" id=4]
 [ext_resource path="res://sprites/tiles/wall.png" type="Texture" id=5]
 [ext_resource path="res://sprites/tiles/start.png" type="Texture" id=6]
 [ext_resource path="res://sprites/tiles/break.png" type="Texture" id=7]
@@ -79,7 +78,7 @@ size_flags_vertical = 3
 
 [node name="Text" type="RichTextLabel" parent="CL/UI/1/2"]
 margin_right = 964.0
-margin_bottom = 75.0
+margin_bottom = 87.0
 mouse_filter = 1
 size_flags_vertical = 3
 custom_styles/focus = SubResource( 1 )
@@ -106,45 +105,30 @@ text = "Hide the text. Oh, and the button too."
 flat = true
 
 [node name="3" type="HBoxContainer" parent="CL/UI/1/2"]
-margin_top = 79.0
+margin_top = 91.0
 margin_right = 964.0
 margin_bottom = 497.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Tiles" type="VBoxContainer" parent="CL/UI/1/2/3"]
-margin_right = 129.0
-margin_bottom = 418.0
+margin_right = 110.0
+margin_bottom = 406.0
 mouse_filter = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CL/UI/1/2/3/Tiles"]
-margin_right = 129.0
-margin_bottom = 31.0
+margin_right = 110.0
+margin_bottom = 62.0
 hint_tooltip = "You can select with numbers 1-9!"
 custom_styles/normal = SubResource( 6 )
 text = " Tile selection"
 fit_content_height = true
 scroll_active = false
 
-[node name="BG" type="Button" parent="CL/UI/1/2/3/Tiles"]
-margin_top = 35.0
-margin_right = 129.8
-margin_bottom = 74.2
-hint_tooltip = "You can select with numbers 1-9!"
-size_flags_horizontal = 3
-size_flags_vertical = 3
-toggle_mode = true
-pressed = true
-text = "Background"
-icon = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Start" type="Button" parent="CL/UI/1/2/3/Tiles"]
-margin_top = 78.0
-margin_right = 129.0
-margin_bottom = 117.2
+margin_top = 66.0
+margin_right = 110.0
+margin_bottom = 105.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -155,9 +139,9 @@ __meta__ = {
 }
 
 [node name="Wall" type="Button" parent="CL/UI/1/2/3/Tiles"]
-margin_top = 121.0
-margin_right = 129.0
-margin_bottom = 160.2
+margin_top = 109.0
+margin_right = 110.0
+margin_bottom = 148.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -168,9 +152,9 @@ __meta__ = {
 }
 
 [node name="Continue" type="Button" parent="CL/UI/1/2/3/Tiles"]
-margin_top = 164.0
-margin_right = 129.0
-margin_bottom = 203.2
+margin_top = 152.0
+margin_right = 110.0
+margin_bottom = 191.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -181,9 +165,9 @@ __meta__ = {
 }
 
 [node name="Break" type="Button" parent="CL/UI/1/2/3/Tiles"]
-margin_top = 207.0
-margin_right = 129.0
-margin_bottom = 246.2
+margin_top = 195.0
+margin_right = 110.0
+margin_bottom = 234.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -194,9 +178,9 @@ __meta__ = {
 }
 
 [node name="I" type="Button" parent="CL/UI/1/2/3/Tiles"]
-margin_top = 250.0
-margin_right = 129.0
-margin_bottom = 289.2
+margin_top = 238.0
+margin_right = 110.0
+margin_bottom = 277.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -207,9 +191,9 @@ __meta__ = {
 }
 
 [node name="Move" type="Button" parent="CL/UI/1/2/3/Tiles"]
-margin_top = 293.0
-margin_right = 129.0
-margin_bottom = 332.2
+margin_top = 281.0
+margin_right = 110.0
+margin_bottom = 320.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -220,9 +204,9 @@ __meta__ = {
 }
 
 [node name="Speed2" type="Button" parent="CL/UI/1/2/3/Tiles"]
-margin_top = 336.0
-margin_right = 129.0
-margin_bottom = 375.2
+margin_top = 324.0
+margin_right = 110.8
+margin_bottom = 363.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -233,9 +217,9 @@ __meta__ = {
 }
 
 [node name="Speed1" type="Button" parent="CL/UI/1/2/3/Tiles"]
-margin_top = 379.0
-margin_right = 129.0
-margin_bottom = 418.2
+margin_top = 367.0
+margin_right = 110.0
+margin_bottom = 406.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -246,34 +230,34 @@ __meta__ = {
 }
 
 [node name="Empty" type="Control" parent="CL/UI/1/2/3"]
-margin_left = 133.0
+margin_left = 114.0
 margin_right = 879.0
-margin_bottom = 418.0
+margin_bottom = 406.0
 size_flags_horizontal = 3
 
 [node name="Tools" type="VBoxContainer" parent="CL/UI/1/2/3"]
 margin_left = 883.0
 margin_right = 964.0
-margin_bottom = 418.0
+margin_bottom = 406.0
 
 [node name="Empty space" type="Control" parent="CL/UI/1/2/3/Tools"]
 margin_right = 81.0
-margin_bottom = 103.0
+margin_bottom = 97.0
 size_flags_vertical = 3
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CL/UI/1/2/3/Tools"]
-margin_top = 107.0
+margin_top = 101.0
 margin_right = 81.0
-margin_bottom = 138.0
+margin_bottom = 132.0
 custom_styles/normal = SubResource( 7 )
 text = "    Edit"
 fit_content_height = true
 scroll_active = false
 
 [node name="Clear" type="Button" parent="CL/UI/1/2/3/Tools"]
-margin_top = 142.0
+margin_top = 136.0
 margin_right = 81.8
-margin_bottom = 181.2
+margin_bottom = 175.2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = " Clear"
@@ -283,9 +267,9 @@ __meta__ = {
 }
 
 [node name="Left+Right" type="HBoxContainer" parent="CL/UI/1/2/3/Tools"]
-margin_top = 185.0
+margin_top = 179.0
 margin_right = 81.0
-margin_bottom = 224.0
+margin_bottom = 218.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -314,9 +298,9 @@ __meta__ = {
 }
 
 [node name="Up+Down" type="HBoxContainer" parent="CL/UI/1/2/3/Tools"]
-margin_top = 228.0
+margin_top = 222.0
 margin_right = 81.0
-margin_bottom = 267.0
+margin_bottom = 261.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -345,9 +329,9 @@ __meta__ = {
 }
 
 [node name="Fill" type="Button" parent="CL/UI/1/2/3/Tools"]
-margin_top = 271.0
+margin_top = 265.0
 margin_right = 81.0
-margin_bottom = 310.2
+margin_bottom = 304.2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Fill"
@@ -356,9 +340,9 @@ __meta__ = {
 }
 
 [node name="Empty space2" type="Control" parent="CL/UI/1/2/3/Tools"]
-margin_top = 314.0
+margin_top = 308.0
 margin_right = 81.0
-margin_bottom = 418.0
+margin_bottom = 406.0
 size_flags_vertical = 3
 
 [node name="Menu Button" type="Button" parent="CL/UI/1/2"]
@@ -391,9 +375,9 @@ window_title = "Save Level"
 resizable = true
 access = 1
 filters = PoolStringArray( "*.tscn" )
-current_dir = "user://home/pizzart/Documents/Godot/ld-47"
+current_dir = "user://home/teawhydee/Documents/GitHub/ld-47"
 current_file = "level.tscn"
-current_path = "user://home/pizzart/Documents/Godot/ld-47/level.tscn"
+current_path = "user://home/teawhydee/Documents/GitHub/ld-47/level.tscn"
 
 [node name="Load Dialog" type="FileDialog" parent="CL/UI/Menu/Dialogs"]
 margin_right = 964.0
@@ -405,9 +389,9 @@ resizable = true
 mode = 0
 access = 1
 filters = PoolStringArray( "*.tscn" )
-current_dir = "user://home/pizzart/Documents/Godot/ld-47"
+current_dir = "user://home/teawhydee/Documents/GitHub/ld-47"
 current_file = "level.tscn"
-current_path = "user://home/pizzart/Documents/Godot/ld-47/level.tscn"
+current_path = "user://home/teawhydee/Documents/GitHub/ld-47/level.tscn"
 
 [node name="Quit" type="ConfirmationDialog" parent="CL/UI/Menu/Dialogs"]
 margin_left = 320.0
@@ -498,7 +482,6 @@ script = ExtResource( 12 )
 [connection signal="mouse_entered" from="CL/UI/1/2/HideButton" to="." method="_on_HideButton_mouse_entered"]
 [connection signal="mouse_exited" from="CL/UI/1/2/HideButton" to="." method="_on_HideButton_mouse_exited"]
 [connection signal="toggled" from="CL/UI/1/2/HideButton" to="." method="_on_CheckButton_toggled"]
-[connection signal="pressed" from="CL/UI/1/2/3/Tiles/BG" to="." method="_on_BG_pressed"]
 [connection signal="pressed" from="CL/UI/1/2/3/Tiles/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="CL/UI/1/2/3/Tiles/Wall" to="." method="_on_Wall_pressed"]
 [connection signal="pressed" from="CL/UI/1/2/3/Tiles/Continue" to="." method="_on_Continue_pressed"]
