@@ -33,32 +33,28 @@ func _process(delta):
 
 func play(audio: String, volume = 0, pitch = 0, loop = false):
 	var audio_player = AudioStreamPlayer.new()
-	audio_player.stream = load(audio)
+	var audio_file = load(audio)
+	audio_player.stream = audio_file
 	audio_player.name = audio.split("/")[-1].split(".")[0]
 	audio_player.volume_db = volume
 	audio_player.pitch_scale = rng.randfn(1, pitch)
 	if "music" in audio:
 		audio_player.bus = "Music"
+		if playing_music:
+			get_node(playing_music).queue_free()
 		playing_music = audio_player.name
-		print("music")
 	elif "sounds" in audio:
 		audio_player.bus = "Sound"
-		print("sound")
 	
 	add_child(audio_player)
 	audio_player.play()
 	
 	yield(audio_player, "finished")
-	if loop:
-		play(audio, volume, pitch, loop)
-	print("im done with ", audio_player.name)
-	if "music" in audio:
-		playing_music = ""
-	audio_player.queue_free()
+	if !"music" in audio:
+		audio_player.queue_free()
 
 
 func stop_music():
 	if playing_music:
-		print(playing_music)
 		get_node(playing_music).queue_free()
 		playing_music = ""
