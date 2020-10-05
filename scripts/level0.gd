@@ -5,11 +5,12 @@ onready var debug = $UI/Debug
 var moving_default_position: Array
 var moving_default_rotation: Array
 
-export(String, "dancing_square", "song1") var song = "song1"
+export(String, "dancing_square", "song1", "none") var song = "none"
 export var UItopTemplate = 0
 
 func _ready():
-	Audio.play( Audio.song_dict.get(song), 0, 0, true )
+	if !song == "none":
+		Audio.play( Audio.song_dict.get(song), 0, 0, true )
 	if name == "LevelMoving":
 		$UI.show_bottom_text("You can look at previous tutorials by pressing 'T' ")
 	if get_parent() is Viewport:

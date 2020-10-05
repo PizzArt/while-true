@@ -1,8 +1,9 @@
 extends TileMap
 
 onready var grid = self
-var offset = +400
-var grid_width = 30
+var grid_width = 20
+onready var offset = grid_width * 8
+
 
 func _draw():
 	var LINE_COLOR = Color(1, 1, 1, 0.2)

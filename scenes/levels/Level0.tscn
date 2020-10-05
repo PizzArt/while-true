@@ -13,6 +13,7 @@ ambient_light_energy = 0.0
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 5 )
+song = "song1"
 
 [node name="TileMap" type="TileMap" parent="."]
 material = SubResource( 1 )

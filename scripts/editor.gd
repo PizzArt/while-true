@@ -2,6 +2,7 @@ extends Control
 
 signal save_path_changed
 signal load_path_changed
+var bounds = Vector2(-10, 9)
 var current_tile = 1
 var start_placed = false
 var start_pos = Vector2()
@@ -18,7 +19,9 @@ onready var buttons = [
 	$"CL/UI/1/2/3/Tiles/Continue",
 	$"CL/UI/1/2/3/Tiles/Break",
 	$"CL/UI/1/2/3/Tiles/I",
-	$"CL/UI/1/2/3/Tiles/Move"
+	$"CL/UI/1/2/3/Tiles/Move",
+	$"CL/UI/1/2/3/Tiles/Speed2",
+	$"CL/UI/1/2/3/Tiles/Speed1"
 ]
 onready var tilemap = $TileMap
 
@@ -33,7 +36,7 @@ func _process(_delta):
 	if draw and not in_menu:
 		var mouse_pos = get_global_mouse_position()
 		var tile_pos = tilemap.map_to_world(tilemap.world_to_map(mouse_pos)) / 16
-		if Input.is_action_pressed("set"):
+		if Input.is_action_pressed("set") and tile_pos.x >= bounds.x and tile_pos.x <= bounds.y and tile_pos.y >= bounds.x and tile_pos.y <= bounds.y:
 			if current_tile == 8:
 				if !start_placed:
 					tilemap.set_cellv(tile_pos, current_tile)
@@ -137,6 +140,10 @@ func _input(event):
 		_on_I_pressed()
 	if Input.is_key_pressed(KEY_7) and just_pressed:
 		_on_Move_pressed()
+	if Input.is_key_pressed(KEY_8) and just_pressed:
+		_on_Speed2_pressed()
+	if Input.is_key_pressed(KEY_9) and just_pressed:
+		_on_Speed1_pressed()
 
 
 func _on_BG_pressed():
@@ -165,6 +172,14 @@ func _on_I_pressed():
 
 func _on_Move_pressed():
 	toggle(buttons[6], 7)
+
+
+func _on_Speed2_pressed():
+	toggle(buttons[7], 2)
+
+
+func _on_Speed1_pressed():
+	toggle(buttons[8], 3)
 
 
 func _on_Menu_Button_pressed():
@@ -238,4 +253,5 @@ func _on_HideButton_mouse_entered():
 	draw = false
 func _on_HideButton_mouse_exited():
 	draw = true
+
 
