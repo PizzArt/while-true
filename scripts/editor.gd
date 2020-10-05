@@ -30,6 +30,9 @@ onready var tilemap = $TileMap
 
 
 func _ready():
+	for i in range(bounds.x, bounds.y + 1):
+		for j in range(bounds.x, bounds.y + 1):
+			$TileMap.set_cell(i, j, 0)
 	bound()
 	get_node("CL/UI/1").visible = false
 	get_node("CL/UI/Menu").visible = true

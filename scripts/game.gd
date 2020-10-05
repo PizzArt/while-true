@@ -8,7 +8,7 @@ preload("res://scenes/levels/LevelMoving.tscn"),
 preload("res://scenes/levels/LevelMoving2.tscn"),
 preload("res://scenes/text_levels/TutorialContinue.tscn"),  # 5
 preload("res://scenes/levels/LevelContinue0.tscn"),
-#insert speed2 tutorial here
+preload("res://scenes/text_levels/TutorialSpeed.tscn"),
 preload("res://scenes/levels/LevelSpeed0.tscn"),
 preload("res://scenes/levels/LevelSpeed1.tscn"),
 preload("res://scenes/levels/LevelMoving3.tscn"),
