@@ -4,8 +4,8 @@ var counter = 0
 var config = ConfigFile.new()
 var err = config.load("user://wt_settings.cfg")
 var easter_egg = ["whale(true)", "whale true", "whale = true", "Whale = true", "SurWhale = true", "SurrailWhale = true"]
-onready var mus_slider = $"MarginContainer/Volume/Volume/Music/Music Slider"
-onready var sfx_slider = $"MarginContainer/Volume/Volume/Sound/Sound Slider"
+onready var mus_slider = $"MarginContainer/Settings/Volume/Music/Music Slider"
+onready var sfx_slider = $"MarginContainer/Settings/Volume/Sound/Sound Slider"
 
 func _ready():
 	Audio.play(Audio.song_dict.get("dancing_square"), -5, 0, true)
@@ -65,8 +65,8 @@ func _on_Settings_pressed():
 
 
 func _on_Volume_Back_pressed():
-	$MarginContainer/Volume.hide()
-	$MarginContainer/Settings.show()
+	$MarginContainer/Settings.hide()
+	$MarginContainer/Main.show()
 
 
 func _on_Music_Slider_value_changed(value):
