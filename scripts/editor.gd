@@ -126,7 +126,17 @@ func _input(event):
 	if Input.is_key_pressed(KEY_1) and just_pressed:
 		_on_BG_pressed()
 	if Input.is_key_pressed(KEY_2) and just_pressed:
-		toggle(buttons[0], 1)
+		_on_Start_pressed()
+	if Input.is_key_pressed(KEY_3) and just_pressed:
+		_on_Wall_pressed()
+	if Input.is_key_pressed(KEY_4) and just_pressed:
+		_on_Continue_pressed()
+	if Input.is_key_pressed(KEY_5) and just_pressed:
+		_on_Break_pressed()
+	if Input.is_key_pressed(KEY_6) and just_pressed:
+		_on_I_pressed()
+	if Input.is_key_pressed(KEY_7) and just_pressed:
+		_on_Move_pressed()
 
 
 func _on_BG_pressed():
@@ -230,3 +240,4 @@ func _on_HideButton_mouse_entered():
 func _on_HideButton_mouse_exited():
 	print("yahoooooo")
 	draw = true
+

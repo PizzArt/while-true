@@ -234,3 +234,17 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Function"]
 anims/fade = SubResource( 7 )
+
+[node name="BottomText" type="Label" parent="."]
+margin_left = 3.02363
+margin_top = 165.051
+margin_right = 43.0236
+margin_bottom = 195.051
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "123"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]

@@ -27,6 +27,7 @@ func _on_Play_pressed():
 
 
 func _on_Quit_pressed():
+	config.save("user://wt_settings.cfg")
 	get_tree().quit()
 
 

@@ -9,6 +9,8 @@ var moving_default_rotation: Array
 export var UItopTemplate = 0
 
 func _ready():
+	if name == "LevelMoving":
+		$UI.show_bottom_text("You can look at previous tutorials by pressing 'T' ")
 	if get_parent() is Viewport:
 		add_camera()
 	$UI.get_node("Debug").visible = true
@@ -83,8 +85,9 @@ func set_color(node, color):
 
 func debug():
 	debug.text = "  DEBUG\n"
-	debug.text += " Global variables\n" + "  speed: " + String($Player.speed)
-	debug.text += "\n\n Local variables\n" + "  i: " + String($Player.steps)
+#	debug.text += " Global variables\n" + "  speed: " + String($Player.speed)
+	debug.text += "\n Local variables\n" + "  i: " + String($Player.steps)
+	debug.text += "\n  speed: " + String($Player.speed)
 
 
 func moving():
