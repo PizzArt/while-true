@@ -13,7 +13,6 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	rng.randomize()
-	get_parent().get_node("Menu").connect("volume_changed", self, "_on_volume_changed")
 	if err != OK:
 		config.set_value("volume", "music", 50)
 		config.set_value("volume", "sound", 50)
@@ -21,6 +20,15 @@ func _ready():
 	else:
 		mus_vol = config.get_value("volume", "music")
 		sfx_vol = config.get_value("volume", "sound")
+
+
+func _process(delta):
+	config = ConfigFile.new()
+	err = config.load("user://wt_settings.cfg")
+	mus_vol = linear2db(config.get_value("volume", "music"))
+	sfx_vol = linear2db(config.get_value("volume", "sound"))
+	AudioServer.set_bus_volume_db(1, mus_vol)
+	AudioServer.set_bus_volume_db(2, sfx_vol)
 
 
 func play(audio: String, volume = 0, pitch = 0, loop = false):
@@ -40,12 +48,3 @@ func play(audio: String, volume = 0, pitch = 0, loop = false):
 	if loop:
 		play(audio, volume, pitch, loop)
 	audio_player.queue_free()
-
-
-func _on_volume_changed():
-	config = ConfigFile.new()
-	err = config.load("user://wt_settings.cfg")
-	mus_vol = linear2db(config.get_value("volume", "music"))
-	sfx_vol = linear2db(config.get_value("volume", "sound"))
-	AudioServer.set_bus_volume_db(1, mus_vol)
-	AudioServer.set_bus_volume_db(2, sfx_vol)
