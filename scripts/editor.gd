@@ -199,7 +199,7 @@ func _on_Main_Menu_pressed():
 
 
 func _on_Quit_confirmed():
-	get_tree().change_scene("res://scenes/Menu.tscn")
+	get_tree().change_scene("res://scenes/control/Menu.tscn")
 
 
 func _on_Test_pressed():
@@ -232,12 +232,10 @@ func _on_Overwrite_confirmed():
 
 func _on_Area2D_mouse_entered():
 	draw = false
-	print("mouse entered")
 
 
 func _on_HideButton_mouse_entered():
 	draw = false
 func _on_HideButton_mouse_exited():
-	print("yahoooooo")
 	draw = true
 

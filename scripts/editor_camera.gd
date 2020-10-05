@@ -14,7 +14,6 @@ func _ready():
 
 func _process(delta):
 	var mous_pos = get_local_mouse_position()
-#	print(mous_pos)
 	if mous_pos.y < -300 * zoom.x or mous_pos.y > 300 * zoom.x or mous_pos.x < -310 * zoom.x or mous_pos.x > 800:
 		get_parent().draw = false
 	else:

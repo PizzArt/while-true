@@ -71,4 +71,4 @@ func _on_Sound_Slider_value_changed(value):
 
 
 func _on_Editor_pressed():
-	get_tree().change_scene("res://scenes/Editor.tscn")
+	get_tree().change_scene("res://scenes/control/Editor.tscn")
