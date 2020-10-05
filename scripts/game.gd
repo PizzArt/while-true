@@ -30,6 +30,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("tutorial"):
 		show_tutorials()
 	if Input.is_action_pressed("back"):
+		Audio.stop_music()
 		get_tree().change_scene("res://scenes/control/Menu.tscn")
 
 
