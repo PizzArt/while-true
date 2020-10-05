@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://misc/VPPixel-Simplified.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://misc/UI.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/menu.gd" type="Script" id=3]
 [ext_resource path="res://sprites/arrow.png" type="Texture" id=4]
 [ext_resource path="res://scripts/easter.gd" type="Script" id=5]
-[ext_resource path="res://audio/music/Dancing Square.wav" type="AudioStream" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -271,10 +270,6 @@ Powered by Godot :)
 Press ESC to get back to the menu"
 scroll_active = false
 script = ExtResource( 5 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-autoplay = true
 [connection signal="pressed" from="MarginContainer/Main/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="MarginContainer/Main/MarginContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MarginContainer/Main/MarginContainer/VBoxContainer/Editor" to="." method="_on_Editor_pressed"]
