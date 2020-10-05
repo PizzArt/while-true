@@ -84,7 +84,7 @@ func check_cell():
 		MOVING:
 			can_move = false
 			$ReloadDelay.start()
-			Audio.play("res://audio/sounds/death1.wav", -9, 0.2, false)
+			Audio.play("res://audio/sounds/death1.wav", -9, 0.2)
 			$AnimationPlayer.play("reload")
 
 
