@@ -221,7 +221,9 @@ text = "Music"
 margin_top = 43.0
 margin_right = 284.0
 margin_bottom = 61.0
-value = 50.0
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="Sound" type="VBoxContainer" parent="MarginContainer/Volume/Volume"]
 margin_top = 81.0
@@ -238,7 +240,9 @@ text = "Sound"
 margin_top = 43.0
 margin_right = 284.0
 margin_bottom = 61.0
-value = 50.0
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="Volume Back" type="Button" parent="MarginContainer/Volume/Volume"]
 margin_top = 162.0

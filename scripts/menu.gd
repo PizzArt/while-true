@@ -1,6 +1,5 @@
 extends Control
 
-signal volume_changed
 var counter = 0
 var config = ConfigFile.new()
 var err = config.load("user://wt_settings.cfg")
@@ -72,13 +71,11 @@ func _on_Volume_Back_pressed():
 func _on_Music_Slider_value_changed(value):
 	config.set_value("volume", "music", value)
 	config.save("user://wt_settings.cfg")
-	emit_signal("volume_changed")
 
 
 func _on_Sound_Slider_value_changed(value):
 	config.set_value("volume", "sound", value)
 	config.save("user://wt_settings.cfg")
-	emit_signal("volume_changed")
 
 
 func _on_Editor_pressed():

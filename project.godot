@@ -21,6 +21,10 @@ run/main_scene="res://scenes/control/Menu.tscn"
 boot_splash/image="res://sprites/surrailwhale.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 
+[audio]
+
+default_bus_layout="res://misc/bus.tres"
+
 [autoload]
 
 Audio="*res://scripts/audio.gd"
