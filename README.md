@@ -1,2 +1,4 @@
-# ld-47
-we are jamming, hoping it's gonna be better this time around
+# For LD47
+We are jamming, hoping it's gonna be better this time around.
+
+Update: i guess
