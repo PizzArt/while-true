@@ -60,17 +60,17 @@ __meta__ = {
 margin_left = 30.0
 margin_top = 30.0
 margin_right = 994.0
-margin_bottom = 570.0
+margin_bottom = 665.0
 
 [node name="2" type="VBoxContainer" parent="CL/UI/1"]
 margin_right = 964.0
-margin_bottom = 540.0
+margin_bottom = 635.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Text" type="RichTextLabel" parent="CL/UI/1/2"]
 margin_right = 964.0
-margin_bottom = 66.0
+margin_bottom = 161.0
 mouse_filter = 1
 size_flags_vertical = 3
 custom_styles/focus = SubResource( 1 )
@@ -97,9 +97,9 @@ text = "Hide the text. Oh, and the button too."
 flat = true
 
 [node name="3" type="HBoxContainer" parent="CL/UI/1/2"]
-margin_top = 70.0
+margin_top = 165.0
 margin_right = 964.0
-margin_bottom = 497.0
+margin_bottom = 592.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -266,9 +266,9 @@ __meta__ = {
 }
 
 [node name="Menu Button" type="Button" parent="CL/UI/1/2"]
-margin_top = 501.0
+margin_top = 596.0
 margin_right = 59.8
-margin_bottom = 540.2
+margin_bottom = 635.2
 size_flags_horizontal = 0
 text = "Menu"
 
@@ -277,39 +277,41 @@ visible = false
 margin_left = 30.0
 margin_top = 30.0
 margin_right = 994.0
-margin_bottom = 570.0
+margin_bottom = 665.0
 alignment = 1
 
 [node name="Dialogs" type="VBoxContainer" parent="CL/UI/Menu"]
 visible = false
 margin_right = 964.0
-margin_bottom = 325.0
+margin_bottom = 420.0
 size_flags_vertical = 3
 
 [node name="Save Dialog" type="FileDialog" parent="CL/UI/Menu/Dialogs"]
 margin_right = 964.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 230, 80.5 )
-size_flags_vertical = 3
-window_title = "Save Level"
-access = 2
-filters = PoolStringArray( "*.tscn" )
-current_dir = "/"
-current_file = "level.tscn"
-current_path = "/level.tscn"
-
-[node name="Load Dialog" type="FileDialog" parent="CL/UI/Menu/Dialogs"]
-margin_right = 964.0
 margin_bottom = 420.0
 rect_min_size = Vector2( 230, 80.5 )
 size_flags_vertical = 3
-window_title = "Open a File"
-mode = 0
-access = 2
+window_title = "Save Level"
+resizable = true
+access = 1
 filters = PoolStringArray( "*.tscn" )
-current_dir = "/"
+current_dir = "user://home/teawhydee/Documents/GitHub/ld-47"
 current_file = "level.tscn"
-current_path = "/level.tscn"
+current_path = "user://home/teawhydee/Documents/GitHub/ld-47/level.tscn"
+
+[node name="Load Dialog" type="FileDialog" parent="CL/UI/Menu/Dialogs"]
+margin_right = 964.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 230, 80.5 )
+size_flags_vertical = 3
+window_title = "Open a File"
+resizable = true
+mode = 0
+access = 1
+filters = PoolStringArray( "*.tscn" )
+current_dir = "user://home/teawhydee/Documents/GitHub/ld-47"
+current_file = "level.tscn"
+current_path = "user://home/teawhydee/Documents/GitHub/ld-47/level.tscn"
 
 [node name="Quit" type="ConfirmationDialog" parent="CL/UI/Menu/Dialogs"]
 margin_left = 320.0
@@ -339,9 +341,9 @@ window_title = "Oops..."
 dialog_text = "You cannot test a level without a starting point. Where would the player be?"
 
 [node name="Buttons" type="MarginContainer" parent="CL/UI/Menu"]
-margin_top = 164.0
+margin_top = 212.0
 margin_right = 964.0
-margin_bottom = 375.0
+margin_bottom = 423.0
 custom_constants/margin_right = 350
 custom_constants/margin_left = 350
 
@@ -382,9 +384,9 @@ text = "Main Menu"
 [node name="Finish" type="Button" parent="CL/UI"]
 visible = false
 margin_left = 30.0
-margin_top = 530.8
+margin_top = 625.8
 margin_right = 154.8
-margin_bottom = 570.0
+margin_bottom = 665.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Finish testing"
