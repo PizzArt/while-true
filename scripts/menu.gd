@@ -3,12 +3,19 @@ extends Control
 var counter = 0
 var config = ConfigFile.new()
 var err = config.load("user://wt_settings.cfg")
+var easter_egg = ["whale(true)", "whale true", "whale = true", "Whale = true", "SurWhale = true", "SurrailWhale = true"]
 onready var mus_slider = $"MarginContainer/Volume/Volume/Music/Music Slider"
 onready var sfx_slider = $"MarginContainer/Volume/Volume/Sound/Sound Slider"
 
 func _ready():
 	startup()
 
+
+func _input(event):
+	if event.is_action_pressed("back"):
+		if counter >= easter_egg.size():
+			$MarginContainer/Main.show()
+			$MarginContainer/Label.hide()
 
 func startup():
 	if err == OK:
@@ -32,12 +39,12 @@ func _on_Quit_pressed():
 
 
 func _on_Button_pressed():
-	counter += 1
-	if counter >= 1:
-		$MarginContainer/Main/Button.text = "while(clicks <= 10)"
-	if counter >= 10:
+	if counter < easter_egg.size():
+		$MarginContainer/Main/Button.text = easter_egg[counter]
+	if counter >= easter_egg.size():
 		$MarginContainer/Main.hide()
 		$MarginContainer/Label.show()
+	counter += 1
 
 
 func _on_Volume_pressed():

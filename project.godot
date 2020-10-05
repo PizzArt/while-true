@@ -15,8 +15,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="LD47"
+config/name="while(true)"
+config/description="while(true): print(\"the simulation never ends.\")"
 run/main_scene="res://scenes/control/Menu.tscn"
+boot_splash/image="res://sprites/surrailwhale.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 
 [display]

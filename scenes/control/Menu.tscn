@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://misc/VPPixel-Simplified.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://misc/UI.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/menu.gd" type="Script" id=3]
 [ext_resource path="res://sprites/arrow.png" type="Texture" id=4]
+[ext_resource path="res://scripts/easter.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -23,7 +24,14 @@ font_data = ExtResource( 1 )
 size = 32
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
 size = 88
 font_data = ExtResource( 1 )
 
@@ -237,16 +245,27 @@ margin_right = 284.0
 margin_bottom = 201.2
 text = "Back"
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="Label" type="RichTextLabel" parent="MarginContainer"]
 visible = false
 margin_left = 20.0
-margin_top = 32.0
+margin_top = 20.0
 margin_right = 1004.0
-margin_bottom = 566.2
-custom_fonts/font = SubResource( 8 )
-text = "EASTER EGG! useless, if you found this then congrats, now you can close the game"
-align = 1
-autowrap = true
+margin_bottom = 580.0
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/bold_font = SubResource( 10 )
+custom_fonts/normal_font = SubResource( 11 )
+bbcode_enabled = true
+bbcode_text = "[center]Join the SurrailWhale [color=#0645AD][url=https://discord.gg/j7Vjk7B]Discord server[/url][/color]![/center]
+[center][b]Powered by [color=#0645AD][url=https://godotengine.org/]Godot[/url][/color] :)[/b][/center]
+
+[b]Press ESC to get back to the menu[/b]"
+text = "Join the SurrailWhale Discord server!
+Powered by Godot :)
+
+Press ESC to get back to the menu"
+scroll_active = false
+script = ExtResource( 5 )
 [connection signal="pressed" from="MarginContainer/Main/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="MarginContainer/Main/MarginContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MarginContainer/Main/MarginContainer/VBoxContainer/Editor" to="." method="_on_Editor_pressed"]
@@ -257,3 +276,4 @@ autowrap = true
 [connection signal="value_changed" from="MarginContainer/Volume/Volume/Music/Music Slider" to="." method="_on_Music_Slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/Volume/Volume/Sound/Sound Slider" to="." method="_on_Sound_Slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/Volume/Volume/Volume Back" to="." method="_on_Volume_Back_pressed"]
+[connection signal="meta_clicked" from="MarginContainer/Label" to="MarginContainer/Label" method="_on_Label_meta_clicked"]
