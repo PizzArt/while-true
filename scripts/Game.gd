@@ -6,13 +6,13 @@ preload("res://scenes/levels/Level0.tscn"),
 preload("res://scenes/text_levels/TutorialMoving.tscn"), # 2
 preload("res://scenes/levels/LevelMoving.tscn"),
 preload("res://scenes/levels/LevelMoving2.tscn"),
-preload("res://scenes/text_levels/Tutorial2.tscn"),  # 5
-preload("res://scenes/levels/Level1.tscn"),
+preload("res://scenes/text_levels/TutorialContinue.tscn"),  # 5
+preload("res://scenes/levels/LevelContinue0.tscn"),
 #insert speed2 tutorial here
 preload("res://scenes/levels/LevelSpeed0.tscn"),
-preload("res://scenes/levels/Level3.tscn"),
-preload("res://scenes/levels/Level4.tscn"),
+preload("res://scenes/levels/LevelSpeed1.tscn"),
 preload("res://scenes/levels/LevelMoving3.tscn"),
+preload("res://scenes/levels/LevelMovingLong.tscn"),
 preload("res://scenes/text_levels/Ending.tscn") # 9
 ]
 var tutorials = [0,2,5]
@@ -26,6 +26,8 @@ var transLength = 0.3
 func _physics_process(delta):
 	if Input.is_action_just_pressed("t"):
 		show_tutorials()
+	if Input.is_action_pressed("back"):
+		get_tree().change_scene("res://scenes/Menu.tscn")
 
 
 func _ready():

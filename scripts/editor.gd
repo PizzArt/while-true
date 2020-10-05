@@ -24,6 +24,8 @@ onready var tilemap = $TileMap
 
 
 func _ready():
+	get_node("CL/UI/1").visible = false
+	get_node("CL/UI/Menu").visible = true
 	$CL/UI.mouse_filter = MOUSE_FILTER_IGNORE
 
 
@@ -50,6 +52,8 @@ func _process(_delta):
 
 
 func toggle(button, tile):
+	button.pressed = true
+	button.grab_focus()
 	for btn in buttons:
 		if btn != button:
 			btn.pressed = false
@@ -115,6 +119,14 @@ func _on_CheckButton_toggled(button_pressed):
 	if button_pressed:
 		$"CL/UI/1/2/HideButton".hide()
 		$"CL/UI/1/2/Text".hide()
+
+
+func _input(event):
+	var just_pressed = event.is_pressed() and not event.is_echo()
+	if Input.is_key_pressed(KEY_1) and just_pressed:
+		_on_BG_pressed()
+	if Input.is_key_pressed(KEY_2) and just_pressed:
+		toggle(buttons[0], 1)
 
 
 func _on_BG_pressed():

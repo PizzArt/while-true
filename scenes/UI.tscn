@@ -100,12 +100,11 @@ transform = Transform2D( 3.33, 0, 0, 3.33, 0, 0 )
 script = ExtResource( 3 )
 
 [node name="Debug" type="RichTextLabel" parent="."]
-visible = false
-margin_left = 208.0
-margin_top = 48.0062
-margin_right = 410.0
-margin_bottom = 316.006
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 223.83
+margin_top = 69.434
+margin_right = 425.83
+margin_bottom = 337.434
+rect_scale = Vector2( 0.42, 0.42 )
 custom_styles/normal = SubResource( 1 )
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true

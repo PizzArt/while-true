@@ -9,6 +9,8 @@ var moving_default_rotation: Array
 export var UItopTemplate = 0
 
 func _ready():
+	if get_parent() is Viewport:
+		add_camera()
 	$UI.get_node("Debug").visible = true
 	$UI.get_node("Function").visible = true
 	$Player.steps = steps_reset
@@ -28,6 +30,14 @@ func _ready():
 
 func _physics_process(delta):
 	debug()
+
+
+func add_camera():
+	var camera = Camera2D.new()
+	camera.zoom = Vector2(0.3,0.3)
+	camera.current = true
+	camera.position += Vector2(153.6, 72)
+	add_child(camera)
 
 
 func reload(funct = "reset()"):
