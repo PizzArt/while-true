@@ -1,7 +1,7 @@
 extends Node
 
 var song_dict = {
-	"dancing_cube": "res://audio/music/Dancing Square.wav",
+	"dancing_square": "res://audio/music/Dancing Square.wav",
 	"song1": "res://audio/music/ld47_1.wav"
 }
 
