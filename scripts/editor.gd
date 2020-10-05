@@ -32,7 +32,7 @@ onready var tilemap = $TileMap
 func _ready():
 	for i in range(bounds.x, bounds.y + 1):
 		for j in range(bounds.x, bounds.y + 1):
-			$TileMap.set_cell(i, j, 0)
+			$TileMap.set_cell(i, j, BG)
 	bound()
 	get_node("CL/UI/1").visible = false
 	get_node("CL/UI/Menu").visible = true
@@ -65,7 +65,7 @@ func _process(_delta):                       #        D R A W
 					else:
 						tilemap.set_cellv(tile_pos, current_tile)
 			if Input.is_action_pressed("delete"):
-				tilemap.set_cellv(tile_pos, -1)
+				tilemap.set_cellv(tile_pos, BG)
 				if tile_pos == start_pos:
 					start_placed = false
 
