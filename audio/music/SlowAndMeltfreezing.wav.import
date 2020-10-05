@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SlowAndMeltfreezing.wav-96a9694f8232d24c3d4ae7447a2af243.sample"
+
+[deps]
+
+source_file="res://audio/music/SlowAndMeltfreezing.wav"
+dest_files=[ "res://.import/SlowAndMeltfreezing.wav-96a9694f8232d24c3d4ae7447a2af243.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=1

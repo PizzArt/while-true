@@ -8,7 +8,6 @@ var moving_default_rotation: Array
 export(String, "dancing_square", "song1", "none") var song = "none"
 export var UItopTemplate = 0
 
-
 func _ready():
 	if !song == "none":
 		Audio.play( Audio.song_dict.get(song), 0, 0, true )
