@@ -126,12 +126,6 @@ func finish_test():
 	in_menu = false
 
 
-func _on_CheckButton_toggled(button_pressed):
-	if button_pressed:
-		$"CL/UI/1/2/HideButton".hide()
-		$"CL/UI/1/2/Text".hide()
-
-
 func _input(event):
 	var just_pressed = event.is_pressed() and not event.is_echo()
 	if Input.is_key_pressed(KEY_1) and just_pressed:
