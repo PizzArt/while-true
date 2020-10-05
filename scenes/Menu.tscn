@@ -112,6 +112,7 @@ custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "Quit"
 
 [node name="arrow" type="Sprite" parent="MarginContainer/Main"]
+visible = false
 modulate = Color( 1, 1, 1, 0.2 )
 position = Vector2( 562.83, 72.6844 )
 rotation = -2.45456
@@ -120,6 +121,7 @@ z_index = -2
 texture = ExtResource( 4 )
 
 [node name="arrow2" type="Sprite" parent="MarginContainer/Main"]
+visible = false
 modulate = Color( 1, 1, 1, 0.2 )
 position = Vector2( 417.612, 75.2931 )
 rotation = -3.81467
@@ -128,6 +130,7 @@ z_index = -2
 texture = ExtResource( 4 )
 
 [node name="arrow3" type="Sprite" parent="MarginContainer/Main"]
+visible = false
 modulate = Color( 1, 1, 1, 0.2 )
 position = Vector2( 441.96, 198.772 )
 rotation = -5.49179
@@ -136,6 +139,7 @@ z_index = -2
 texture = ExtResource( 4 )
 
 [node name="arrow4" type="Sprite" parent="MarginContainer/Main"]
+visible = false
 modulate = Color( 1, 1, 1, 0.2 )
 position = Vector2( 552.396, 190.076 )
 rotation = -7.01315

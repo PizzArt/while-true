@@ -43,10 +43,11 @@ func next_level():
 
 
 func show_tutorials():
-	var tut = tutorials[tutorials_completed-1]
-	levelID -= 1
-	loadLevel(tut);
-	tutorials_completed -= 1
+	if tutorials_completed > 0:
+		var tut = tutorials[tutorials_completed-1]
+		levelID -= 1
+		loadLevel(tut);
+		tutorials_completed -= 1
 
 
 func loadLevel(levelID):
