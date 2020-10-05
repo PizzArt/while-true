@@ -52,14 +52,14 @@ func show_tutorials():
 
 func loadLevel(levelID):
 	var Trans = $Transition
-	if get_child(4):
+	if get_child_count() > 4:
 		get_child(4).pause_mode = Node.PAUSE_MODE_STOP
 		get_tree().paused = true
 	$Tween.interpolate_property(Trans, "color:a", Trans.color.a, 1, transLength,
 	 Tween.TRANS_CUBIC, Tween.EASE_OUT)
 	$Tween.start()
 	yield($Tween, "tween_completed")
-	if get_child(4):
+	if get_child_count() > 4:
 		get_child(4).queue_free()
 	$Tween.interpolate_property(Trans, "color:a", Trans.color.a, 0, transLength,
 	 Tween.TRANS_CUBIC, Tween.EASE_OUT)

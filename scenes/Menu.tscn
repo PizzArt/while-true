@@ -109,7 +109,7 @@ margin_right = 384.0
 margin_bottom = 236.2
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-text = "Quit"
+text = "Return 0;"
 
 [node name="arrow" type="Sprite" parent="MarginContainer/Main"]
 visible = false
