@@ -94,6 +94,7 @@ func next_step():
 	var moving = check_cell() 
 	get_parent().step()
 	if steps <= 0:
+		Audio.play("res://audio/sounds/death1.wav", -9, 0.2)
 		can_move = false
 		$ReloadDelay.start()
 		$AnimationPlayer.play("reload")

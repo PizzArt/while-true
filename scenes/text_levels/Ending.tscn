@@ -2,9 +2,11 @@
 
 [ext_resource path="res://misc/Font.tres" type="DynamicFont" id=1]
 
-
 [sub_resource type="Environment" id=1]
-background_energy = 0.0
+background_mode = 4
+glow_enabled = true
+glow_bloom = 0.09
+glow_blend_mode = 0
 
 [node name="Tutorial" type="Node2D"]
 
@@ -17,18 +19,18 @@ custom_fonts/mono_font = ExtResource( 1 )
 custom_fonts/normal_font = ExtResource( 1 )
 custom_constants/line_separation = -6
 bbcode_enabled = true
-bbcode_text = "	
-		 Thanks for playing
-		
-		
-		 SurrailWhale Team
- TeaWhyDee	PizzArt	SKGuy"
-text = "	
-		 Thanks for playing
-		
-		
-		 SurrailWhale Team
- TeaWhyDee	PizzArt	SKGuy"
+bbcode_text = "
+[center][color=aqua]Thanks for playing![/color]
+
+
+SurrailWhale Team
+TeaWhyDee	PizzArt	SKGuy[/center]"
+text = "
+Thanks for playing!
+
+
+SurrailWhale Team
+TeaWhyDee	PizzArt	SKGuy"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false

@@ -208,6 +208,7 @@ func _on_Menu_Button_pressed():
 
 
 func _on_Return_pressed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	$CL/UI/Menu.hide()
 	$"CL/UI/1".show()
 	draw = true
@@ -215,6 +216,7 @@ func _on_Return_pressed():
 
 
 func _on_Save_pressed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	$"CL/UI/Menu/Dialogs/Save Dialog".popup()
 
 
@@ -224,29 +226,37 @@ func _on_Save_Dialog_file_selected(path):
 
 
 func _on_Save_Dialog_confirmed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	save_level()
 
 
 func _on_Main_Menu_pressed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	$CL/UI/Menu/Dialogs/Quit.popup()
 
 
 func _on_Quit_confirmed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	get_tree().change_scene("res://scenes/control/Menu.tscn")
 
 
 func _on_Test_pressed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	if $TileMap.get_used_cells_by_id(8).size():
+		Audio.play("res://audio/music/ld47_1.wav", -20, 0, true)
 		test_level()
 	else:
 		$CL/UI/Menu/Dialogs/Start.popup()
 
 
 func _on_Finish_pressed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
+	Audio.stop_music()
 	finish_test()
 
 
 func _on_Load_pressed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	$"CL/UI/Menu/Dialogs/Load Dialog".popup()
 
 
@@ -256,10 +266,12 @@ func _on_Load_Dialog_file_selected(path):
 
 
 func _on_Load_Dialog_confirmed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	$CL/UI/Menu/Dialogs/Overwrite.popup()
 
 
 func _on_Overwrite_confirmed():
+	Audio.play("res://audio/sounds/select1.wav", -10, 0.2)
 	load_level()
 
 
