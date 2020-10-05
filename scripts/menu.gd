@@ -80,4 +80,5 @@ func _on_Sound_Slider_value_changed(value):
 
 
 func _on_Editor_pressed():
+	Audio.stop_music()
 	get_tree().change_scene("res://scenes/control/Editor.tscn")

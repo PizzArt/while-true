@@ -8,7 +8,7 @@ preload("res://scenes/levels/LevelMoving.tscn"),
 preload("res://scenes/levels/LevelMoving2.tscn"),
 preload("res://scenes/text_levels/TutorialContinue.tscn"),  # 5
 preload("res://scenes/levels/LevelContinue0.tscn"),
-preload("res://scenes/text_levels/TutorialSpeed.tscn"),
+preload("res://scenes/text_levels/TutorialSpeed.tscn"), # 7
 preload("res://scenes/levels/LevelSpeed0.tscn"),
 preload("res://scenes/levels/LevelSpeed1.tscn"),
 preload("res://scenes/levels/LevelMoving3.tscn"),
@@ -16,7 +16,7 @@ preload("res://scenes/levels/LevelMovingLong.tscn"),
 preload("res://scenes/text_levels/Ending.tscn") # 9
 ]
 
-var tutorials = [0,2,5]
+var tutorials = [0,2,5,7]
 var tutorials_completed = 0
 
 var levelID = 0

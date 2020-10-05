@@ -84,19 +84,20 @@ func check_cell():
 		MOVING:
 			can_move = false
 			$ReloadDelay.start()
-			Audio.play("res://audio/sounds/death1.wav", -9, 0.2)
 			$AnimationPlayer.play("reload")
+			Audio.play("res://audio/sounds/death1.wav", -9, 0.2)
+			return 1
 
 
 func next_step():
 	steps -= 1
-	check_cell()
+	var moving = check_cell() 
 	get_parent().step()
 	if steps <= 0:
 		can_move = false
 		$ReloadDelay.start()
 		$AnimationPlayer.play("reload")
-	else:
+	elif not moving:
 		$StepCooldown.start()
 
 
