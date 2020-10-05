@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="LD47"
-run/main_scene="res://scenes/Menu.tscn"
+run/main_scene="res://scenes/control/Menu.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 
 [display]

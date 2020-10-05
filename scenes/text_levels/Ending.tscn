@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://misc/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://misc/Font.tres" type="DynamicFont" id=1]
+
 
 [sub_resource type="Environment" id=1]
 background_energy = 0.0

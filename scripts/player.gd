@@ -80,8 +80,6 @@ func check_cell():
 			can_move = false
 			$ReloadDelay.start()
 			$AnimationPlayer.play("reload")
-#			get_parent().reload("die()")
-			
 
 
 func next_step():
