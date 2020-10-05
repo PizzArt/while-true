@@ -14,6 +14,7 @@ var level_save_path = ""
 var level_load_path = ""
 var level = preload("res://scenes/Example.tscn")
 var player = preload("res://scenes/Player.tscn")
+var brush_size = 1
 onready var buttons = [
 	$"CL/UI/1/2/3/Tiles/BG",
 	$"CL/UI/1/2/3/Tiles/Start",
@@ -36,30 +37,34 @@ func _ready():
 
 
 func bound():
-	for i in range(bounds.x, bounds.y + 1):
-		for j in range(bounds.x, bounds.y + 1):
+	for i in range(bounds.x - 1, bounds.y + 2):
+		$TileMap.set_cell(i, bounds.y + 1, WALL)
+		$TileMap.set_cell(i, bounds.x - 1, WALL)
+		$TileMap.set_cell(bounds.x - 1, i, WALL)
+		$TileMap.set_cell(bounds.y + 1, i, WALL)
 
 
-func _process(_delta):
+func _process(_delta):                       #        D R A W
 	if draw and not in_menu:
 		var mouse_pos = get_global_mouse_position()
 		var tile_pos = tilemap.map_to_world(tilemap.world_to_map(mouse_pos)) / 16
-		if Input.is_action_pressed("set") and tile_pos.x >= bounds.x and tile_pos.x <= bounds.y and tile_pos.y >= bounds.x and tile_pos.y <= bounds.y:
-			if current_tile == 8:
-				if !start_placed:
-					tilemap.set_cellv(tile_pos, current_tile)
-					start_pos = tile_pos
-					start_placed = true
-			else:
-				if start_placed:
-					if !tile_pos == start_pos:
+		if tile_pos.x >= bounds.x and tile_pos.x <= bounds.y and tile_pos.y >= bounds.x and tile_pos.y <= bounds.y:
+			if Input.is_action_pressed("set"):
+				if current_tile == 8:
+					if !start_placed:
 						tilemap.set_cellv(tile_pos, current_tile)
+						start_pos = tile_pos
+						start_placed = true
 				else:
-					tilemap.set_cellv(tile_pos, current_tile)
-		if Input.is_action_pressed("delete"):
-			tilemap.set_cellv(tile_pos, -1)
-			if tile_pos == start_pos:
-				start_placed = false
+					if start_placed:
+						if !tile_pos == start_pos:
+							tilemap.set_cellv(tile_pos, current_tile)
+					else:
+						tilemap.set_cellv(tile_pos, current_tile)
+			if Input.is_action_pressed("delete"):
+				tilemap.set_cellv(tile_pos, -1)
+				if tile_pos == start_pos:
+					start_placed = false
 
 
 func toggle(button, tile):
@@ -276,31 +281,39 @@ func _on_HideButton_mouse_exited():
 
 func _on_Clear_pressed():
 	$TileMap.clear()
+	bound()
 
 
 func _on_Left_pressed():
-	for i in range(bounds.x, bounds.y + 1):
+	for i in range(bounds.x, bounds.y ):
 		for j in range(bounds.x, bounds.y + 1):
 			$TileMap.set_cell(i, j, $TileMap.get_cell(i + 1, j) )
+	for i in range(bounds.x, bounds.y + 1 ):
+		$TileMap.set_cell(bounds.y, i, -1)
 
 
 func _on_Right_pressed():
-	print(-bounds.y, -bounds.x + 1)
 	for i in range(-bounds.y, -bounds.x + 1):
 		for j in range(-bounds.y - 1, -bounds.x):
 			$TileMap.set_cell(-i, j, $TileMap.get_cell(-i - 1, j) )
+	for i in range(bounds.x, bounds.y + 1 ):
+		$TileMap.set_cell(bounds.x, i, -1)
 
 
 func _on_Up_pressed():
 	for i in range(bounds.x, bounds.y + 1):
 		for j in range(bounds.x, bounds.y + 1):
 			$TileMap.set_cell(j, i, $TileMap.get_cell(j, i + 1) )
+	for i in range(bounds.x, bounds.y + 1 ):
+		$TileMap.set_cell(i, bounds.y, -1)
 
 
 func _on_Down_pressed():
 	for i in range(-bounds.y, -bounds.x + 1):
 		for j in range(-bounds.y - 1, -bounds.x):
 			$TileMap.set_cell(j, -i, $TileMap.get_cell(j, -i - 1) )
+	for i in range(bounds.x, bounds.y + 1 ):
+		$TileMap.set_cell(i, bounds.x, -1)
 
 
 func _on_Fill_pressed():
