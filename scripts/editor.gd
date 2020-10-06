@@ -329,6 +329,7 @@ func _on_Down_pressed():
 
 
 func _on_Fill_pressed():
+	start_placed = false
 	if current_tile != RESPAWN:
 		for i in range(bounds.x, bounds.y + 1):
 			for j in range(bounds.x, bounds.y + 1):
