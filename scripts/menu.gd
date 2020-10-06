@@ -25,8 +25,8 @@ func startup():
 		mus_slider.value = mus_vol
 		sfx_slider.value = sfx_vol
 	else:
-		config.set_value("volume", "music", 50)
-		config.set_value("volume", "sound", 50)
+		config.set_value("volume", "music", 1)
+		config.set_value("volume", "sound", 1)
 		config.save("user://wt_settings.cfg")
 
 

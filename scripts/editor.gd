@@ -46,7 +46,7 @@ func bound():
 		$TileMap.set_cell(bounds.y + 1, i, WALL)
 
 
-func _process(_delta):                       #        D R A W
+func _physics_process(_delta):                       #        D R A W
 	if draw and not in_menu:
 		var mouse_pos = get_global_mouse_position()
 		var tile_pos = tilemap.map_to_world(tilemap.world_to_map(mouse_pos)) / 16
