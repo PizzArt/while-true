@@ -289,35 +289,43 @@ func _on_Clear_pressed():
 
 
 func _on_Left_pressed():
+	if start_placed:
+		start_pos.x -= 1
 	for i in range(bounds.x, bounds.y ):
 		for j in range(bounds.x, bounds.y + 1):
 			$TileMap.set_cell(i, j, $TileMap.get_cell(i + 1, j) )
 	for i in range(bounds.x, bounds.y + 1 ):
-		$TileMap.set_cell(bounds.y, i, -1)
+		$TileMap.set_cell(bounds.y, i, BG)
 
 
 func _on_Right_pressed():
+	if start_placed:
+		start_pos.x += 1
 	for i in range(-bounds.y, -bounds.x + 1):
 		for j in range(-bounds.y - 1, -bounds.x):
 			$TileMap.set_cell(-i, j, $TileMap.get_cell(-i - 1, j) )
 	for i in range(bounds.x, bounds.y + 1 ):
-		$TileMap.set_cell(bounds.x, i, -1)
+		$TileMap.set_cell(bounds.x, i, BG)
 
 
 func _on_Up_pressed():
+	if start_placed:
+		start_pos.y -= 1
 	for i in range(bounds.x, bounds.y + 1):
 		for j in range(bounds.x, bounds.y + 1):
 			$TileMap.set_cell(j, i, $TileMap.get_cell(j, i + 1) )
 	for i in range(bounds.x, bounds.y + 1 ):
-		$TileMap.set_cell(i, bounds.y, -1)
+		$TileMap.set_cell(i, bounds.y, BG)
 
 
 func _on_Down_pressed():
+	if start_placed:
+		start_pos.y += 1
 	for i in range(-bounds.y, -bounds.x + 1):
 		for j in range(-bounds.y - 1, -bounds.x):
 			$TileMap.set_cell(j, -i, $TileMap.get_cell(j, -i - 1) )
 	for i in range(bounds.x, bounds.y + 1 ):
-		$TileMap.set_cell(i, bounds.x, -1)
+		$TileMap.set_cell(i, bounds.x, BG)
 
 
 func _on_Fill_pressed():

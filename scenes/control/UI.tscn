@@ -124,65 +124,61 @@ __meta__ = {
 
 [node name="Level1" type="HBoxContainer" parent="."]
 visible = false
-margin_left = 1.76777
-margin_top = 0.685613
-margin_right = 782.768
-margin_bottom = 40.6856
+margin_left = 2.23862
+margin_top = 0.125069
+margin_right = 783.239
+margin_bottom = 30.1251
+rect_scale = Vector2( 0.5, 0.5 )
 custom_constants/separation = 8
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="while(true)" type="Label" parent="Level1"]
-margin_top = 5.0
 margin_right = 118.0
-margin_bottom = 35.0
+margin_bottom = 30.0
 custom_styles/normal = ExtResource( 4 )
 custom_fonts/font = ExtResource( 1 )
 text = "while(true) { "
 
 [node name="reset" type="Label" parent="Level1"]
 margin_left = 126.0
-margin_top = 5.0
 margin_right = 192.0
-margin_bottom = 35.0
+margin_bottom = 30.0
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 text = "reset();"
 
 [node name="move" type="Label" parent="Level1"]
 margin_left = 200.0
-margin_top = 5.0
 margin_right = 522.0
-margin_bottom = 35.0
+margin_bottom = 30.0
 custom_styles/normal = ExtResource( 5 )
 custom_fonts/font = ExtResource( 1 )
 text = "while(i>0) {move(); movePlatform()};"
 
 [node name="i5" type="Label" parent="Level1"]
 margin_left = 530.0
-margin_top = 5.0
 margin_right = 585.0
-margin_bottom = 35.0
+margin_bottom = 30.0
 custom_styles/normal = SubResource( 3 )
 custom_fonts/font = ExtResource( 1 )
 text = "i = 5; "
 
 [node name="end" type="Label" parent="Level1"]
 margin_left = 593.0
-margin_top = 5.0
 margin_right = 781.0
-margin_bottom = 35.0
+margin_bottom = 30.0
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 1 )
 text = "}                         "
 
 [node name="Level0" type="HBoxContainer" parent="."]
 visible = false
-margin_left = 1.76777
-margin_top = 0.685613
-margin_right = 447.768
-margin_bottom = 30.6856
+margin_left = 1.84731
+margin_top = 0.208377
+margin_right = 447.848
+margin_bottom = 30.2084
 rect_scale = Vector2( 0.5, 0.5 )
 custom_constants/separation = 8
 __meta__ = {
