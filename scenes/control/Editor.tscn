@@ -373,11 +373,11 @@ rect_min_size = Vector2( 230, 80.5 )
 size_flags_vertical = 3
 window_title = "Save Level"
 resizable = true
-access = 1
+access = 2
 filters = PoolStringArray( "*.tscn" )
-current_dir = "user://home/teawhydee/Documents/GitHub/ld-47"
+current_dir = "/home/pizzart/Documents/Godot/ld-47"
 current_file = "level.tscn"
-current_path = "user://home/teawhydee/Documents/GitHub/ld-47/level.tscn"
+current_path = "/home/pizzart/Documents/Godot/ld-47/level.tscn"
 
 [node name="Load Dialog" type="FileDialog" parent="CL/UI/Menu/Dialogs"]
 margin_right = 964.0
@@ -387,11 +387,11 @@ size_flags_vertical = 3
 window_title = "Open a File"
 resizable = true
 mode = 0
-access = 1
+access = 2
 filters = PoolStringArray( "*.tscn" )
-current_dir = "user://home/teawhydee/Documents/GitHub/ld-47"
+current_dir = "/home/pizzart/Documents/Godot/ld-47"
 current_file = "level.tscn"
-current_path = "user://home/teawhydee/Documents/GitHub/ld-47/level.tscn"
+current_path = "/home/pizzart/Documents/Godot/ld-47/level.tscn"
 
 [node name="Quit" type="ConfirmationDialog" parent="CL/UI/Menu/Dialogs"]
 margin_left = 320.0

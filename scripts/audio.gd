@@ -15,8 +15,8 @@ func _ready():
 	rng.randomize()
 	get_parent().get_node("Menu").connect("vol_changed", self, "_on_vol_changed")
 	if err != OK:
-		config.set_value("volume", "music", 50)
-		config.set_value("volume", "sound", 50)
+		config.set_value("volume", "music", 1)
+		config.set_value("volume", "sound", 1)
 		config.save("user://wt_settings.cfg")
 		mus_vol = linear2db(config.get_value("volume", "music"))
 		sfx_vol = linear2db(config.get_value("volume", "sound"))
