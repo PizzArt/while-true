@@ -360,6 +360,7 @@ margin_left = 30.0
 margin_top = 30.0
 margin_right = 994.0
 margin_bottom = 570.0
+theme = ExtResource( 4 )
 alignment = 1
 
 [node name="Dialogs" type="VBoxContainer" parent="CL/UI/Menu"]
@@ -377,9 +378,9 @@ window_title = "Save Level"
 resizable = true
 access = 2
 filters = PoolStringArray( "*.tscn" )
-current_dir = "/home/teawhydee/Documents/GitHub/ld-47"
+current_dir = "/home/pizzart/Documents/Godot/ld-47"
 current_file = "level.tscn"
-current_path = "/home/teawhydee/Documents/GitHub/ld-47/level.tscn"
+current_path = "/home/pizzart/Documents/Godot/ld-47/level.tscn"
 
 [node name="Load Dialog" type="FileDialog" parent="CL/UI/Menu/Dialogs"]
 margin_right = 964.0
@@ -391,9 +392,9 @@ resizable = true
 mode = 0
 access = 2
 filters = PoolStringArray( "*.tscn" )
-current_dir = "/home/teawhydee/Documents/GitHub/ld-47"
+current_dir = "/home/pizzart/Documents/Godot/ld-47"
 current_file = "level.tscn"
-current_path = "/home/teawhydee/Documents/GitHub/ld-47/level.tscn"
+current_path = "/home/pizzart/Documents/Godot/ld-47/level.tscn"
 
 [node name="Quit" type="ConfirmationDialog" parent="CL/UI/Menu/Dialogs"]
 margin_left = 320.0

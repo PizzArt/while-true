@@ -2,9 +2,7 @@
 
 [ext_resource path="res://misc/Font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/tutorial.gd" type="Script" id=2]
-
-[sub_resource type="Environment" id=1]
-background_energy = 0.0
+[ext_resource path="res://scenes/Bloom.tscn" type="PackedScene" id=3]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource( 2 )
@@ -30,5 +28,4 @@ __meta__ = {
 position = Vector2( 148.794, 85.8254 )
 zoom = Vector2( 0.3, 0.3 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+[node name="Bloom" parent="." instance=ExtResource( 3 )]

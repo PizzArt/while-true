@@ -121,6 +121,7 @@ custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "return;"
 
 [node name="Settings" type="MarginContainer" parent="MarginContainer"]
+visible = false
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 1004.0
