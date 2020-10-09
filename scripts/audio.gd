@@ -1,8 +1,8 @@
 extends Node
 
 var song_dict = {
-	"dancing_square": "res://audio/music/Dancing Square.wav",
-	"song1": "res://audio/music/ld47_1.wav"
+	"dancing_square": "res://audio/music/Dancing Square.ogg",
+	"song1": "res://audio/music/ld47_1.ogg"
 }
 var playing_music = ""
 var config = ConfigFile.new()

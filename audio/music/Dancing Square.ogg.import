@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Dancing Square.ogg-5dc5d1cfd31e1aca6b1aa979996e2467.oggstr"
+
+[deps]
+
+source_file="res://audio/music/Dancing Square.ogg"
+dest_files=[ "res://.import/Dancing Square.ogg-5dc5d1cfd31e1aca6b1aa979996e2467.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
